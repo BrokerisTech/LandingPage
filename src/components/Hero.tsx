@@ -62,18 +62,6 @@ const Hero: React.FC = () => {
               >
                 ROTINA 100% AUTOMATIZADA
               </Typography>
-               {/* <Typography
-                variant={isMobile ? 'h3' : 'h2'}
-                sx={{
-                  fontWeight: 700,
-                  mb: 3,
-                  lineHeight: 1.2,
-                  color: theme.palette.text.primary,
-                }}
-              >
-                Faremos tudo por você
-              </Typography> */}
-              
               <Typography
                 variant={isMobile ? 'h3' : 'h2'}
                 sx={{

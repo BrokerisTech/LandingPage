@@ -6,7 +6,7 @@ const theme = createTheme({
     primary: {
       main: '#1269f4',
       light: '#1269f4',
-      dark: '#1269f4',
+      dark: '#0357df',
     },
     secondary: {
       main: '#10b981', // Verde para CTAs e elementos de destaque
@@ -83,6 +83,7 @@ const theme = createTheme({
           fontWeight: 600,
           borderRadius: 8,
           padding: '12px 24px',
+          letterSpacing: 0.3,
         },
         contained: {
           boxShadow: '0 4px 14px 0 rgba(0, 0, 0, 0.1)',

@@ -21,7 +21,7 @@ const LandingPage: React.FC = () => {
       <Hero />
       <Box sx={{
          height: '140px',
-         backgroundColor: theme => theme.palette.primary.dark,
+         backgroundColor: theme => theme.palette.primary.light,
          borderRadius: "0 0 35px 35px",
 
          justifyContent: "center",

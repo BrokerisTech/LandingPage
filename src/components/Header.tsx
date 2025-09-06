@@ -1,202 +1,116 @@
 import React from 'react';
+
 import {
   AppBar,
   Toolbar,
   Button,
   Box,
-  Container,
-  IconButton,
   useTheme,
-  useMediaQuery,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
+  Container,
 } from '@mui/material';
-import { Menu as MenuIcon, Person as PersonIcon } from '@mui/icons-material';
+
+import { Person as PersonIcon } from '@mui/icons-material';
 
 const Header: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
 
   const navigationItems = [
     { label: 'Início', href: '#inicio' },
+    { label: 'Funcionalidades', href: '#funcionalidades' },
     { label: 'Planos', href: '#planos' },
-    { label: 'Cases', href: '#cases' },
     { label: 'Blog', href: '#blog' },
   ];
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <List>
-        {navigationItems.map((item) => (
-          <ListItem key={item.label} disablePadding>
-            <ListItemText 
-              primary={item.label} 
-              sx={{ textAlign: 'center' }}
-            />
-          </ListItem>
-        ))}
-        <ListItem>
-          <Button
-            variant="outlined"
-            startIcon={<PersonIcon />}
-            sx={{ 
-              color: theme.palette.text.primary,
-              borderColor: theme.palette.text.primary,
-              '&:hover': {
-                borderColor: theme.palette.primary.main,
-                color: theme.palette.primary.main,
-              }
-            }}
-          >
-            Login
-          </Button>
-        </ListItem>
-        <ListItem>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: theme.palette.primary.main,
-              '&:hover': {
-                backgroundColor: theme.palette.primary.dark,
-              }
-            }}
-          >
-            Iniciar teste grátis
-          </Button>
-        </ListItem>
-      </List>
-    </Box>
-  );
-
   return (
-    <>
-      <AppBar 
-        position="sticky"
-        elevation={0}
-        sx={{ 
-          backgroundColor: 'white',
-          borderBottom: `1px solid ${theme.palette.divider}`,
-        }}
-      >
-        <Container maxWidth="lg">
-          <Toolbar sx={{ justifyContent: 'space-between', py: 1 }}>
-            {/* Logo */}
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <Box
+    <AppBar 
+      position="sticky"
+      elevation={0}
+      sx={{ 
+        backgroundColor: 'white',
+        borderBottom: `1px solid ${theme.palette.divider}`,
+        boxShadow: "0 0 10px 0 rgba(43, 91, 234, 0.363)",
+      }}
+    >
+      <Container maxWidth="lg" disableGutters>
+        <Toolbar sx={{ justifyContent: 'space-between', py: 1 }}>
+          {/* Logo */}
+          <Box
+            component="img"
+            src="/assets/images/brokeris4.svg"
+            alt="Logo do sistema"
+            sx={{
+              width: { xs: '25px', md: '150px' },
+              height: { xs: '25px', md: '28px' },
+              display: 'flex',
+            }}
+          />
+
+          {/* Desktop Navigation */}
+          <Box 
+            sx={{ 
+              display: 'flex',
+              alignItems: 'center',
+              gap: 1,
+              width: "500px",
+            }}>
+            {navigationItems.map((item) => (
+              <Button
+                key={item.label}
+                href={item.href}
                 sx={{
-                  width: 28,
-                  height: 28,
-                  borderRadius: 1,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
+                  color: theme.palette.text.secondary,
+                  fontWeight: 600,
+                  '&:hover': {
+                    color: theme.palette.primary.main,
+                    backgroundColor: 'transparent',
+                  },
                 }}
               >
-              <Box
-                component="img"
-                src="/assets/images/brokeris4.svg"
-                alt="Logo do sistema"
-                sx={{
-                  width: { xs: '25px', md: '150px' },
-                  height: { xs: '25px', md: '150px' },
-                  ml: 8
-                }}
-              />
-              </Box>
-            </Box>
+                {item.label}
+              </Button>
+            ))}
+          </Box>
 
-            {/* Desktop Navigation */}
-            {!isMobile && (
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
-                {navigationItems.map((item) => (
-                  <Button
-                    key={item.label}
-                    href={item.href}
-                    sx={{
-                      color: theme.palette.text.primary,
-                      fontWeight: 500,
-                      '&:hover': {
-                        color: theme.palette.primary.main,
-                        backgroundColor: 'transparent',
-                      },
-                    }}
-                  >
-                    {item.label}
-                  </Button>
-                ))}
-                
-                <Button
-                  startIcon={<PersonIcon />}
-                  sx={{
-                    color: theme.palette.text.primary,
-                    fontWeight: 500,
-                    '&:hover': {
-                      color: theme.palette.primary.main,
-                      backgroundColor: 'transparent',
-                    },
-                  }}
-                >
-                  Login
-                </Button>
-                
-                <Button
-                  variant="contained"
-                  sx={{
-                    backgroundColor: theme.palette.primary.main,
-                    px: 3,
-                    '&:hover': {
-                      backgroundColor: theme.palette.primary.dark,
-                    },
-                  }}
-                >
-                  Iniciar teste grátis
-                </Button>
-              </Box>
-            )}
+          {/* Desktop Buttons */}
+          <Box
+            sx={{ 
+              display: 'flex',
+              alignItems: 'center',
+              textAlign: "right",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Button
+              startIcon={<PersonIcon color="primary"/>}
+              sx={{
+                color: theme.palette.primary.main,
+                fontWeight: 600,
+                '&:hover': {
+                  color: theme.palette.primary.main,
+                  backgroundColor: 'transparent',
+                },
+              }}
+            >
+              Área da corretora
+            </Button>
 
-            {/* Mobile Menu Button */}
-            {isMobile && (
-              <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                onClick={handleDrawerToggle}
-                sx={{ color: theme.palette.text.primary }}
+            {/* <Button
+              variant="contained"
+              sx={{
+                backgroundColor: theme.palette.primary.main,
+                px: 1.5,
+                py: 1,
+                '&:hover': {
+                  backgroundColor: theme.palette.primary.dark,
+                },
+              }}
               >
-                <MenuIcon />
-              </IconButton>
-            )}
-          </Toolbar>
-        </Container>
-      </AppBar>
-
-      {/* Mobile Drawer */}
-      <Drawer
-        variant="temporary"
-        anchor="right"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        ModalProps={{
-          keepMounted: true, // Better open performance on mobile.
-        }}
-        sx={{
-          display: { xs: 'block', md: 'none' },
-          '& .MuiDrawer-paper': {
-            boxSizing: 'border-box',
-            width: 280,
-          },
-        }}
-      >
-        {drawer}
-      </Drawer>
-    </>
+              Criar conta
+            </Button> */}
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 };
 

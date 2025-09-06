@@ -48,22 +48,6 @@ const FAQ: React.FC = () => {
       answer: 'Sim! Nossos blogs vêm com design moderno e responsivo, mas você pode personalizar cores, fontes, layout e muito mais para combinar com a identidade da sua marca.',
     },
     {
-      question: 'O Google pode me punir por usar conteúdo de IA?',
-      answer: 'Não! Nossa IA cria conteúdo humanizado e otimizado para SEO. O Google valoriza conteúdo de qualidade, independente de como foi criado. Nossos clientes têm resultados excelentes sem penalizações.',
-    },
-    {
-      question: 'SEO ainda funciona?',
-      answer: 'Sim! SEO continua sendo uma das melhores estratégias de marketing digital. A Brokeris usa as técnicas mais avançadas de SEO para garantir que seu conteúdo apareça no topo do Google.',
-    },
-    {
-      question: 'A IA vai substituir o Google? O SEO vai deixar de funcionar?',
-      answer: 'Não! A IA e o Google trabalham juntos. Na verdade, o Google está investindo pesado em IA. Nossa plataforma se adapta às mudanças e sempre usa as melhores práticas de SEO.',
-    },
-    {
-      question: 'Posso gerar artigos em vários idiomas? Ou apenas em português?',
-      answer: 'Atualmente focamos no mercado brasileiro com conteúdo em português, mas estamos trabalhando para expandir para outros idiomas em breve.',
-    },
-    {
       question: 'Vou demorar para ter resultado?',
       answer: 'Nossos clientes começam a ver resultados em 2-4 semanas. Alguns casos mostram melhorias significativas em apenas 20 dias. O tempo varia conforme a competitividade do seu nicho.',
     },

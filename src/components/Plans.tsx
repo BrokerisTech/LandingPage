@@ -15,6 +15,7 @@ import {
   ListItemText,
   useTheme,
   useMediaQuery,
+  alpha,
 } from '@mui/material';
 import {
   Check as CheckIcon,
@@ -107,7 +108,10 @@ const Plans: React.FC = () => {
   };
 
   return (
-    <Box sx={{ py: { xs: 6, md: 8 }, background: theme => `linear-gradient(to bottom, #ffffff, ${theme.palette.primary.main}, #ffffff)`, }}>
+    <Box sx={{ 
+      py: { xs: 6, md: 8 }, 
+      background: theme => `linear-gradient(to bottom, #ffffff, ${alpha(theme.palette.primary.main, 0.2)}, #ffffff)`
+    }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography
