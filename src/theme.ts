@@ -4,9 +4,9 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#7c3aed', // Roxo principal
-      light: '#a855f7',
-      dark: '#5b21b6',
+      main: '#1269f4',
+      light: '#1269f4',
+      dark: '#1269f4',
     },
     secondary: {
       main: '#10b981', // Verde para CTAs e elementos de destaque

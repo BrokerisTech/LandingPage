@@ -2,7 +2,6 @@ import React from 'react';
 import {
   AppBar,
   Toolbar,
-  Typography,
   Button,
   Box,
   Container,
@@ -79,7 +78,7 @@ const Header: React.FC = () => {
   return (
     <>
       <AppBar 
-        position="static" 
+        position="sticky"
         elevation={0}
         sx={{ 
           backgroundColor: 'white',
@@ -92,36 +91,25 @@ const Header: React.FC = () => {
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
               <Box
                 sx={{
-                  width: 32,
-                  height: 32,
-                  backgroundColor: theme.palette.primary.main,
+                  width: 28,
+                  height: 28,
                   borderRadius: 1,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                 }}
               >
-                <Typography
-                  variant="h6"
-                  sx={{
-                    color: 'white',
-                    fontWeight: 'bold',
-                    fontSize: '1.2rem',
-                  }}
-                >
-                  A
-                </Typography>
-              </Box>
-              <Typography
-                variant="h6"
+              <Box
+                component="img"
+                src="/assets/images/brokeris4.svg"
+                alt="Logo do sistema"
                 sx={{
-                  color: theme.palette.text.primary,
-                  fontWeight: 'bold',
-                  fontSize: '1.5rem',
+                  width: { xs: '25px', md: '150px' },
+                  height: { xs: '25px', md: '150px' },
+                  ml: 8
                 }}
-              >
-                Brokeris
-              </Typography>
+              />
+              </Box>
             </Box>
 
             {/* Desktop Navigation */}

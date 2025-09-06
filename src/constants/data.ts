@@ -1,21 +1,3 @@
-import {
-  TrendingUp as TrendingUpIcon,
-  Visibility as VisibilityIcon,
-  Mouse as MouseIcon,
-  Speed as SpeedIcon,
-  AutoAwesome as AutoAwesomeIcon,
-  Analytics as AnalyticsIcon,
-  Group as GroupIcon,
-  Security as SecurityIcon,
-  Support as SupportIcon,
-  Article as ArticleIcon,
-  WhatsApp as WhatsAppIcon,
-  Search as SearchIcon,
-  AutoFixHigh as AutoFixHighIcon,
-  Share as ShareIcon,
-  Business as BusinessIcon,
-} from '@mui/icons-material';
-
 export const stats = [
   {
     number: '3.5k',
@@ -32,78 +14,6 @@ export const stats = [
   {
     number: '2A',
     label: 'anos de mercado',
-  },
-];
-
-export const benefits = [
-  {
-    icon: <SpeedIcon sx={{ fontSize: 40 }} />,
-title: '100% Automático',
-  description: 'Tudo acontece automaticamente, sem necessidade de intervenção manual. Configure uma vez e deixe nossa IA trabalhar.',
-  },
-{
-  icon: <AutoAwesomeIcon sx={ { fontSize: 40 } } />,
-  title: 'IA Especializada',
-    description: 'Nossa IA é especializada em SEO e criação de conteúdo, muito mais poderosa que ferramentas genéricas.',
-  },
-{
-  icon: <AnalyticsIcon sx={ { fontSize: 40 } } />,
-  title: 'Relatórios Detalhados',
-    description: 'Receba relatórios semanais completos via WhatsApp com todas as métricas importantes do seu blog.',
-  },
-{
-  icon: <GroupIcon sx={ { fontSize: 40 } } />,
-  title: 'Análise de Concorrentes',
-    description: 'Descubra as melhores estratégias dos seus concorrentes e use isso a seu favor automaticamente.',
-  },
-{
-  icon: <SecurityIcon sx={ { fontSize: 40 } } />,
-  title: 'Conteúdo Humanizado',
-    description: 'Nossa IA cria conteúdo que parece ter sido escrito por humanos, evitando penalizações do Google.',
-  },
-{
-  icon: <SupportIcon sx={ { fontSize: 40 } } />,
-  title: 'Suporte Especializado',
-    description: 'Nossa equipe está sempre disponível para ajudar você a maximizar os resultados do seu blog.',
-  },
-];
-
-export const services = [
-  {
-    icon: <ArticleIcon sx={{ fontSize: 48 }} />,
-title: 'Blog Profissional',
-  description: 'Baixíssimo tempo de carregamento, design moderno, domínio customizável e otimizado para SEO... sem esforço!',
-    image: '/api/placeholder/300/200',
-  },
-{
-  icon: <WhatsAppIcon sx={ { fontSize: 48 } } />,
-  title: 'Relatórios no WhatsApp',
-    description: 'Receba relatórios semanais e nunca mais nem entre na ferramenta acompanhe tudo por lá!',
-      image: '/api/placeholder/300/200',
-  },
-{
-  icon: <SearchIcon sx={ { fontSize: 48 } } />,
-  title: 'Análise de Concorrentes',
-    description: 'Descubra os melhores artigos e palavras-chaves dos seus concorrentes - e use isso na sua estratégia!',
-      image: '/api/placeholder/300/200',
-  },
-{
-  icon: <AutoFixHighIcon sx={ { fontSize: 48 } } />,
-  title: 'Conteúdo Humanizado',
-    description: 'Nossa IA cria conteúdo que parece ter sido escrito por humanos, evitando penalizações do Google.',
-      image: '/api/placeholder/300/200',
-  },
-{
-  icon: <AnalyticsIcon sx={ { fontSize: 48 } } />,
-  title: 'Análise de Palavra-Chave',
-    description: 'Descubra as melhores palavras-chave para o seu nicho e otimize seu conteúdo automaticamente.',
-      image: '/api/placeholder/300/200',
-  },
-{
-  icon: <ShareIcon sx={ { fontSize: 48 } } />,
-  title: 'Várias Formas de Criar',
-    description: 'Crie conteúdo para diferentes plataformas: blog, redes sociais, e-mail marketing e muito mais.',
-      image: '/api/placeholder/300/200',
   },
 ];
 
@@ -308,23 +218,5 @@ export const team = [
     role: 'Especialistas em SEO',
     avatar: '/api/placeholder/80/80',
     description: 'Profissionais especializados em estratégias de conteúdo e SEO.',
-  },
-];
-
-export const values = [
-  {
-    icon: <BusinessIcon sx={{ fontSize: 40 }} />,
-title: 'Inovação',
-  description: 'Utilizamos as mais avançadas tecnologias de IA para criar soluções únicas no mercado.',
-  },
-{
-  icon: <TrendingUpIcon sx={ { fontSize: 40 } } />,
-  title: 'Resultados',
-    description: 'Focamos em entregar resultados reais e mensuráveis para nossos clientes.',
-  },
-{
-  icon: <GroupIcon sx={ { fontSize: 40 } } />,
-  title: 'Suporte',
-    description: 'Nossa equipe está sempre disponível para ajudar você a alcançar seus objetivos.',
   },
 ];

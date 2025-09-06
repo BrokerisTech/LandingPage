@@ -107,7 +107,7 @@ const Plans: React.FC = () => {
   };
 
   return (
-    <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: theme.palette.background.default }}>
+    <Box sx={{ py: { xs: 6, md: 8 }, background: theme => `linear-gradient(to bottom, #ffffff, ${theme.palette.primary.main}, #ffffff)`, }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography

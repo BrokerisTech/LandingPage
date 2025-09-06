@@ -23,11 +23,14 @@ const Hero: React.FC = () => {
   return (
     <Box
       sx={{
-        background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
+        // background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
         color: 'white',
         py: { xs: 8, md: 12 },
         position: 'relative',
         overflow: 'hidden',
+        borderRadius: " 0 0 35px 35px",
+        zIndex: 10,
+        background: "white",
       }}
     >
       {/* Background decorative elements */}
@@ -38,7 +41,6 @@ const Hero: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
           opacity: 0.3,
         }}
       />
@@ -46,41 +48,45 @@ const Hero: React.FC = () => {
       <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="center">
           {/* Left Column - Text Content */}
-          <Grid  size={{xs: 12, md: 6}} >
+          <Grid  size={{xs: 12, md: 6.5}} >
             <Box sx={{ position: 'relative', zIndex: 1 }}>
               <Typography
                 variant="body2"
                 sx={{
-                  color: 'rgba(255, 255, 255, 0.8)',
                   textTransform: 'uppercase',
                   letterSpacing: 2,
                   mb: 2,
                   fontWeight: 600,
+                  color: theme.palette.primary.main,
                 }}
               >
                 ROTINA 100% AUTOMATIZADA
               </Typography>
-              
-              <Typography
-                variant={isMobile ? 'h3' : 'h2'}
-                sx={{
-                  fontWeight: 700,
-                  mb: 2,
-                  lineHeight: 1.2,
-                }}
-              >
-                Sem tempo?
-              </Typography>
-              
-              <Typography
+               {/* <Typography
                 variant={isMobile ? 'h3' : 'h2'}
                 sx={{
                   fontWeight: 700,
                   mb: 3,
                   lineHeight: 1.2,
+                  color: theme.palette.text.primary,
                 }}
               >
                 Faremos tudo por você
+              </Typography> */}
+              
+              <Typography
+                variant={isMobile ? 'h3' : 'h2'}
+                sx={{
+                  fontWeight: 700,
+                  fontSize: { xs: '1.5rem', md: '2rem' },
+                  mb: 2,
+                  lineHeight: 1.2,
+                  color: theme.palette.text.primary,
+                }}
+              >
+                  Organize comissões, simplifique pagamentos e tenha total visibilidade da lucratividade – <Box component={"strong"} sx={{ color: theme.palette.primary.main }}>
+                  Tudo em um só sistema
+                  </Box>
               </Typography>
               
               <Typography
@@ -90,35 +96,29 @@ const Hero: React.FC = () => {
                   opacity: 0.9,
                   lineHeight: 1.6,
                   fontSize: { xs: '1rem', md: '1.1rem' },
+                  color: theme.palette.text.primary,
                 }}
               >
-                Construir o blog? Pensar em pautas? Analisar concorrentes? Escrever conteúdos? 
-                Agendar as postagens? Divulgar nas redes sociais? Gerar e analisar relatórios? 
-                A nossa IA fará tudo isso por você... e você irá receber os resultados toda semana por WhatsApp.
+                Chega de planilhas confusas e processos manuais. Com o Brokeris,
+                sua corretora tem tudo em um só lugar: gestão de contratos, comissões e pagamentos, relatórios inteligentes e equipe conectada. Simples, moderno e feito para crescer
               </Typography>
               
               <Button
                 variant="contained"
                 size="large"
                 sx={{
-                  backgroundColor: 'white',
-                  color: theme.palette.primary.main,
                   px: 4,
                   py: 1.5,
-                  fontSize: '1.1rem',
-                  fontWeight: 600,
-                  '&:hover': {
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                  },
+                  fontSize: '1rem',
                 }}
               >
-                Iniciar teste grátis
+                Iniciar teste grátis por 15 dias
               </Button>
             </Box>
           </Grid>
 
           {/* Right Column - Dashboard Mockup */}
-          <Grid size={{xs: 12, md: 6}}>
+          <Grid size={{xs: 12, md: 5.5}}>
             <Box sx={{ position: 'relative', zIndex: 1 }}>
               {/* Main Dashboard Card */}
               <Card
@@ -127,6 +127,7 @@ const Hero: React.FC = () => {
                   backdropFilter: 'blur(10px)',
                   border: '1px solid rgba(255, 255, 255, 0.2)',
                   borderRadius: 3,
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
                   p: 3,
                   mb: 3,
                 }}
@@ -175,7 +176,7 @@ const Hero: React.FC = () => {
                 <Card
                   sx={{
                     position: 'absolute',
-                    top: -20,
+                    top: -50,
                     left: -20,
                     backgroundColor: 'white',
                     borderRadius: 2,
@@ -185,33 +186,7 @@ const Hero: React.FC = () => {
                     zIndex: 2,
                   }}
                 >
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                    <Box
-                      sx={{
-                        width: 32,
-                        height: 32,
-                        backgroundColor: theme.palette.primary.main,
-                        borderRadius: '50%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        mr: 2,
-                      }}
-                    >
-                      <Typography variant="body2" sx={{ color: 'white', fontWeight: 'bold' }}>
-                        10
-                      </Typography>
-                    </Box>
-                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
-                      Artigos
-                    </Typography>
-                  </Box>
-                  <Typography variant="body2" sx={{ color: theme.palette.text.primary, mb: 1 }}>
-                    • Artigo: Lorem Ipsum
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: theme.palette.text.primary, mb: 2 }}>
-                    • Artigo: Lorem Ipsum
-                  </Typography>
+            
                   <Box sx={{ display: 'flex', gap: 1 }}>
                     <Box sx={{ width: 24, height: 24, backgroundColor: '#0077b5', borderRadius: 1 }} />
                     <Box sx={{ width: 24, height: 24, backgroundColor: '#1877f2', borderRadius: 1 }} />
@@ -231,6 +206,7 @@ const Hero: React.FC = () => {
                     minWidth: 180,
                     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
                     zIndex: 2,
+                    mt: -30,
                   }}
                 >
                   <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
