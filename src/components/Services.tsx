@@ -7,62 +7,39 @@ import {
   Card,
   CardContent,
   useTheme,
-  useMediaQuery,
 } from '@mui/material';
 import {
   Article as ArticleIcon,
   WhatsApp as WhatsAppIcon,
   Search as SearchIcon,
-  AutoFixHigh as AutoFixHighIcon,
-  Analytics as AnalyticsIcon,
-  Share as ShareIcon,
 } from '@mui/icons-material';
 
 const Services: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const services = [
     {
       icon: <ArticleIcon sx={{ fontSize: 48, color: theme.palette.primary.main }} />,
-      title: 'Blog Profissional',
+      title: '100% Online',
       description: 'Baixíssimo tempo de carregamento, design moderno, domínio customizável e otimizado para SEO... sem esforço!',
       image: '/api/placeholder/300/200',
     },
     {
       icon: <WhatsAppIcon sx={{ fontSize: 48, color: theme.palette.success.main }} />,
-      title: 'Relatórios no WhatsApp',
+      title: 'Criptografia de Dados (LGPD)',
       description: 'Receba relatórios semanais e nunca mais nem entre na ferramenta acompanhe tudo por lá!',
       image: '/api/placeholder/300/200',
     },
     {
       icon: <SearchIcon sx={{ fontSize: 48, color: theme.palette.primary.main }} />,
-      title: 'Análise de Concorrentes',
+      title: 'Suporte Especializado',
       description: 'Descubra os melhores artigos e palavras-chaves dos seus concorrentes - e use isso na sua estratégia!',
-      image: '/api/placeholder/300/200',
-    },
-    {
-      icon: <AutoFixHighIcon sx={{ fontSize: 48, color: theme.palette.success.main }} />,
-      title: 'Conteúdo Humanizado',
-      description: 'Nossa IA cria conteúdo que parece ter sido escrito por humanos, evitando penalizações do Google.',
-      image: '/api/placeholder/300/200',
-    },
-    {
-      icon: <AnalyticsIcon sx={{ fontSize: 48, color: theme.palette.primary.main }} />,
-      title: 'Análise de Palavra-Chave',
-      description: 'Descubra as melhores palavras-chave para o seu nicho e otimize seu conteúdo automaticamente.',
-      image: '/api/placeholder/300/200',
-    },
-    {
-      icon: <ShareIcon sx={{ fontSize: 48, color: theme.palette.success.main }} />,
-      title: 'Várias Formas de Criar',
-      description: 'Crie conteúdo para diferentes plataformas: blog, redes sociais, e-mail marketing e muito mais.',
       image: '/api/placeholder/300/200',
     },
   ];
 
   return (
-    <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: theme.palette.background.paper }}>
+    <Box sx={{ py: { xs: 4, md: 5 }, backgroundColor: theme.palette.background.paper }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography
@@ -71,21 +48,21 @@ const Services: React.FC = () => {
               color: theme.palette.primary.main,
               textTransform: 'uppercase',
               letterSpacing: 2,
-              mb: 2,
+              mb: 1,
               fontWeight: 600,
             }}
           >
-            FUNCIONALIDADES
+            O melhor da tecnologia
           </Typography>
           <Typography
-            variant={isMobile ? 'h3' : 'h2'}
             sx={{
+              fontSize: { xs: '1.5rem', md: '2rem' },
               color: theme.palette.text.primary,
               fontWeight: 700,
-              mb: 3,
+              mb: 2,
             }}
           >
-            Ferramentas para crescer o seu blog
+            Segurança e eficiência
           </Typography>
         </Box>
 
@@ -105,23 +82,6 @@ const Services: React.FC = () => {
                 }}
               >
                 <CardContent sx={{ p: 3, textAlign: 'center' }}>
-                  <Box
-                    sx={{
-                      width: 64,
-                      height: 64,
-                      backgroundColor: theme.palette.primary.light,
-                      borderRadius: 3,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      mx: 'auto',
-                      mb: 2,
-                      transition: 'all 0.3s ease-in-out',
-                    }}
-                  >
-                    {service.icon}
-                  </Box>
-                  
                   <Typography
                     variant="h6"
                     sx={{

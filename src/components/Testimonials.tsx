@@ -87,42 +87,6 @@ const Testimonials: React.FC = () => {
   ];
 
   const renderMetrics = (metrics: any) => {
-    if (metrics.type === 'chat') {
-      return (
-        <Box sx={{ backgroundColor: '#f8f9fa', p: 1.5, mt: 1.5, borderRadius: 1, border: '1px solid #e9ecef' }}>
-          <Typography variant="body2" sx={{ color: theme.palette.text.secondary, lineHeight: 1.4, fontSize: '0.8rem' }}>
-            {metrics.content.substring(0, 120)}...
-          </Typography>
-        </Box>
-      );
-    }
-
-    if (metrics.type === 'chart') {
-      return (
-        <Box sx={{ mt: 1.5 }}>
-          <Typography variant="subtitle2" sx={{ mb: 1, color: theme.palette.text.primary, fontSize: '0.85rem', fontWeight: 600 }}>
-            {metrics.title}
-          </Typography>
-          <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-            <Typography variant="h6" sx={{ color: theme.palette.primary.main, fontWeight: 'bold', mr: 1, fontSize: '1.2rem' }}>
-              {metrics.data.keywords}
-            </Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <TrendingUpIcon sx={{ color: theme.palette.success.main, mr: 0.5, fontSize: 16 }} />
-              <Typography variant="body2" sx={{ color: theme.palette.success.main, fontWeight: 600, fontSize: '0.8rem' }}>
-                {metrics.data.growth}
-              </Typography>
-            </Box>
-          </Box>
-          <Box sx={{ height: 80, backgroundColor: theme.palette.background.paper, borderRadius: 1, p: 1, border: '1px solid #e9ecef' }}>
-            <Typography variant="body2" sx={{ color: theme.palette.text.secondary, textAlign: 'center', mt: 2, fontSize: '0.75rem' }}>
-              Gráfico de evolução
-            </Typography>
-          </Box>
-        </Box>
-      );
-    }
-
     if (metrics.type === 'stats') {
       return (
         <Box sx={{ mt: 1.5 }}>

@@ -25,13 +25,18 @@ const Benefits: React.FC = () => {
   const benefits = [
     {
       icon: <SpeedIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
-      title: '100% Automático',
+      title: 'Controle de Proposta',
       description: 'Tudo acontece automaticamente, sem necessidade de intervenção manual. Configure uma vez e deixe nossa IA trabalhar.',
     },
     {
       icon: <AutoAwesomeIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
-      title: 'IA Especializada',
+      title: 'Controle de entradas de parcelas',
       description: 'Nossa IA é especializada em SEO e criação de conteúdo, muito mais poderosa que ferramentas genéricas.',
+    },
+    {
+      icon: <AnalyticsIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
+      title: 'Geração de recibos de pagamentos',
+      description: 'Receba relatórios semanais completos via WhatsApp com todas as métricas importantes do seu blog.',
     },
     {
       icon: <AnalyticsIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
@@ -40,13 +45,18 @@ const Benefits: React.FC = () => {
     },
     {
       icon: <GroupIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
-      title: 'Análise de Concorrentes',
+      title: 'Acesso online para o Produtor',
       description: 'Descubra as melhores estratégias dos seus concorrentes e use isso a seu favor automaticamente.',
     },
     {
       icon: <SecurityIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
-      title: 'Conteúdo Humanizado',
+      title: 'Comissão organizada',
       description: 'Nossa IA cria conteúdo que parece ter sido escrito por humanos, evitando penalizações do Google.',
+    },
+    {
+      icon: <SupportIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
+      title: 'Relatorios diversificados',
+      description: 'Nossa equipe está sempre disponível para ajudar você a maximizar os resultados do seu blog.',
     },
     {
       icon: <SupportIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,

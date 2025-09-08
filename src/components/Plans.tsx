@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Box,
   Container,
@@ -7,7 +7,6 @@ import {
   Card,
   CardContent,
   Button,
-  Switch,
   Chip,
   List,
   ListItem,
@@ -24,15 +23,12 @@ import {
 const Plans: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const [isAnnual, setIsAnnual] = useState(false);
 
   const plans = [
     {
-      name: 'ESSENTIAL',
-      description: 'Ideal para quem está começando a construir sua presença digital',
-      monthlyPrice: 99,
-      annualPrice: 99,
-      discount: 25,
+      name: '2 Usuários',
+      description: 'Ideal para quem tem 1 administrador',
+      monthlyPrice: 300,
       features: [
         '1 blog automatizado',
         '5 artigos por mês',
@@ -46,16 +42,13 @@ const Plans: React.FC = () => {
         'Cursos completos de SEO',
         'Análise de palavras-chave',
         'Relatórios semanais no WhatsApp',
-        'Dashboard com dados do Google',
       ],
       isPopular: false,
     },
     {
-      name: 'PLUS',
-      description: 'Ideal para empresas que querem escalar o seu tráfego com um blog estratégico',
-      monthlyPrice: 199,
-      annualPrice: 149,
-      discount: 25,
+      name: '1 Usuário',
+      description: 'Ideal para quem está sozinho no seu negócio',
+      monthlyPrice: 200.0,
       features: [
         '1 blog automatizado',
         '15 artigos por mês',
@@ -68,17 +61,14 @@ const Plans: React.FC = () => {
         'Conexão com ferramentas de blog',
         'Sugestões avançadas de conteúdo',
         'Integração com redes sociais',
-        'Clusters de Conteúdo (EM BREVE)',
         'Buscador de tendências (EM BREVE)',
       ],
       isPopular: true,
     },
     {
-      name: 'SCALE',
-      description: 'Ideal para agências e redes de blogs que querem aumentar seu lucro',
+      name: 'Personalizado (Usuários adicionais)',
+      description: 'Ideal para médias/grandes empresas',
       monthlyPrice: 399,
-      annualPrice: 299,
-      discount: 25,
       features: [
         '4 blogs automatizados',
         '40 artigos por mês',
@@ -90,8 +80,6 @@ const Plans: React.FC = () => {
         'Programa de agência parceira',
         'Desconto em blogs e artigos',
         'Plugin WordPress white-label',
-        'Gerente de conta',
-        'Suporte prioritário no WhatsApp',
         'Área do cliente',
         'Relatórios com sua marca (EM BREVE)',
       ],
@@ -100,11 +88,11 @@ const Plans: React.FC = () => {
   ];
 
   const getPrice = (plan: any) => {
-    return isAnnual ? plan.annualPrice : plan.monthlyPrice;
+    return plan.monthlyPrice
   };
 
   const getOriginalPrice = (plan: any) => {
-    return isAnnual ? plan.monthlyPrice : plan.monthlyPrice;
+    return plan.monthlyPrice
   };
 
   return (
@@ -120,8 +108,8 @@ const Plans: React.FC = () => {
               color: theme.palette.primary.main,
               textTransform: 'uppercase',
               letterSpacing: 2,
-              mb: 2,
               fontWeight: 600,
+              mb: 2,
             }}
           >
             PLANOS
@@ -136,53 +124,6 @@ const Plans: React.FC = () => {
           >
             Temos o plano perfeito para a sua empresa
           </Typography>
-
-          {/* Billing Toggle */}
-          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2, mb: 4 }}>
-            <Typography
-              variant="body1"
-              sx={{
-                color: isAnnual ? theme.palette.text.secondary : theme.palette.primary.main,
-                fontWeight: isAnnual ? 400 : 600,
-              }}
-            >
-              Mensal
-            </Typography>
-            <Switch
-              checked={isAnnual}
-              onChange={(e) => setIsAnnual(e.target.checked)}
-              sx={{
-                '& .MuiSwitch-thumb': {
-                  backgroundColor: theme.palette.primary.main,
-                },
-                '& .MuiSwitch-track': {
-                  backgroundColor: theme.palette.primary.light,
-                },
-              }}
-            />
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <Typography
-                variant="body1"
-                sx={{
-                  color: isAnnual ? theme.palette.primary.main : theme.palette.text.secondary,
-                  fontWeight: isAnnual ? 600 : 400,
-                }}
-              >
-                Anual
-              </Typography>
-              {isAnnual && (
-                <Chip
-                  label="2 meses grátis"
-                  size="small"
-                  sx={{
-                    backgroundColor: theme.palette.success.main,
-                    color: 'white',
-                    fontSize: '0.75rem',
-                  }}
-                />
-              )}
-            </Box>
-          </Box>
         </Box>
 
         <Grid container spacing={3}>
@@ -194,6 +135,7 @@ const Plans: React.FC = () => {
                   position: 'relative',
                   border: plan.isPopular ? `2px solid ${theme.palette.primary.main}` : '1px solid #e9ecef',
                   transition: 'all 0.3s ease-in-out',
+                  overflow: 'visible',
                   '&:hover': {
                     transform: 'translateY(-4px)',
                     boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)',

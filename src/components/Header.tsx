@@ -29,6 +29,7 @@ const Header: React.FC = () => {
         backgroundColor: 'white',
         borderBottom: `1px solid ${theme.palette.divider}`,
         boxShadow: "0 0 10px 0 rgba(43, 91, 234, 0.363)",
+        borderRadius: "0 0 35px 35px",
       }}
     >
       <Container maxWidth="lg" disableGutters>

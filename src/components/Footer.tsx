@@ -313,7 +313,7 @@ const Footer: React.FC = () => {
                 fontSize: '0.875rem',
               }}
             >
-              Desenvolvido por Ge Coelho
+              Desenvolvido por Brokeris ❤️
             </Typography>
           </Box>
         </Box>

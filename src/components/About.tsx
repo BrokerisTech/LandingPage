@@ -5,7 +5,6 @@ import {
   Typography,
   Grid,
   Card,
-  CardContent,
   Avatar,
   useTheme,
   useMediaQuery,
@@ -22,16 +21,9 @@ const About: React.FC = () => {
 
   const team = [
     {
-      name: 'Ge Coelho',
-      role: 'Desenvolvedor',
-      avatar: '/api/placeholder/80/80',
-      description: 'Especialista em desenvolvimento de soluções de automação e IA.',
-    },
-    {
       name: 'Equipe Brokeris',
-      role: 'Especialistas em SEO',
+      role: 'Especialistas em gestão de corretoras de planos de saúde',
       avatar: '/api/placeholder/80/80',
-      description: 'Profissionais especializados em estratégias de conteúdo e SEO.',
     },
   ];
 
@@ -81,7 +73,7 @@ const About: React.FC = () => {
                   mb: 3,
                 }}
               >
-                A revolução da automação de conteúdo
+                A revolução na gestão de corretoras de planos de saúde
               </Typography>
               
               <Typography
@@ -93,10 +85,11 @@ const About: React.FC = () => {
                   fontSize: { xs: '1rem', md: '1.1rem' },
                 }}
               >
-                A Brokeris nasceu da necessidade de democratizar o marketing de conteúdo. 
-                Vimos que muitas empresas não conseguiam manter blogs ativos por falta de tempo, 
-                conhecimento ou recursos. Por isso, criamos uma solução que automatiza todo o 
-                processo, desde a estratégia até a publicação e análise de resultados.
+                O Brokeris nasceu da necessidade de simplificar a rotina das corretoras.
+                Percebemos que muitas delas ainda perdem tempo com planilhas confusas,
+                controles manuais e processos que dificultam o crescimento. Por isso,
+                criamos uma solução simples, moderna e completa,
+                que reúne em um só lugar tudo o que você precisa: gestão de contratos, parcelas, comissões, relatórios e recibos.
               </Typography>
 
               <Typography
@@ -108,9 +101,8 @@ const About: React.FC = () => {
                   fontSize: { xs: '1rem', md: '1.1rem' },
                 }}
               >
-                Nossa missão é fazer com que qualquer empresa, independente do tamanho ou 
-                orçamento, possa ter uma presença digital forte através de conteúdo de qualidade 
-                e estratégias de SEO avançadas.
+                Nossa missão é garantir que qualquer corretora, independente do tamanho ou estrutura,
+                possa ter uma gestão eficiente, organizada e inteligente, economizando tempo e aumentando resultados.
               </Typography>
 
               {/* Values */}
@@ -166,11 +158,11 @@ const About: React.FC = () => {
 
               <Grid container spacing={2}>
                 {team.map((member, index) => (
-                  <Grid size={{xs: 12, md: 6}} key={index}>
+                  <Grid size={{xs: 12, md: 12}} key={index}>
                     <Card
                       sx={{
                         textAlign: 'center',
-                        p: 2,
+                        p: 3.5,
                         transition: 'all 0.3s ease-in-out',
                         border: '1px solid #e9ecef',
                         '&:hover': {
@@ -179,52 +171,38 @@ const About: React.FC = () => {
                         },
                       }}
                     >
-                      <CardContent sx={{ p: 0 }}>
-                        <Avatar
-                          src={member.avatar}
-                          sx={{
-                            width: 60,
-                            height: 60,
-                            mx: 'auto',
-                            mb: 1.5,
-                            backgroundColor: theme.palette.primary.main,
-                          }}
-                        >
-                          {member.name.charAt(0)}
-                        </Avatar>
-                        <Typography
-                          variant="h6"
-                          sx={{
-                            color: theme.palette.text.primary,
-                            fontWeight: 600,
-                            mb: 0.5,
-                            fontSize: '1rem',
-                          }}
-                        >
-                          {member.name}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            color: theme.palette.primary.main,
-                            fontWeight: 500,
-                            mb: 1,
-                            fontSize: '0.85rem',
-                          }}
-                        >
-                          {member.role}
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            color: theme.palette.text.secondary,
-                            lineHeight: 1.5,
-                            fontSize: '0.85rem',
-                          }}
-                        >
-                          {member.description}
-                        </Typography>
-                      </CardContent>
+                      <Avatar
+                        src={member.avatar}
+                        sx={{
+                          width: 60,
+                          height: 60,
+                          mx: 'auto',
+                          mb: 1.5,
+                          backgroundColor: theme.palette.primary.main,
+                        }}
+                      >
+                        {member.name.charAt(0)}
+                      </Avatar>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          color: theme.palette.text.primary,
+                          fontWeight: 600,
+                          mb: 2,
+                          fontSize: '1rem',
+                        }}
+                      >
+                        {member.name}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          color: theme.palette.primary.main,
+                          fontWeight: 500,
+                          fontSize: '0.85rem',
+                        }}
+                      >
+                        {member.role}
+                      </Typography>
                     </Card>
                   </Grid>
                 ))}
@@ -236,10 +214,10 @@ const About: React.FC = () => {
                   sx={{
                     backgroundColor: theme.palette.primary.main,
                     color: 'white',
-                    p: 2,
+                    p: 3.5,
+                    textAlign: 'center',
                   }}
                 >
-                  <CardContent sx={{ p: 0, textAlign: 'center' }}>
                     <Typography
                       variant="h4"
                       sx={{
@@ -248,7 +226,7 @@ const About: React.FC = () => {
                         fontSize: '1.8rem',
                       }}
                     >
-                      2+ Anos
+                      20+ Anos
                     </Typography>
                     <Typography
                       variant="body1"
@@ -259,7 +237,6 @@ const About: React.FC = () => {
                     >
                       de experiência no mercado
                     </Typography>
-                  </CardContent>
                 </Card>
               </Box>
             </Box>
