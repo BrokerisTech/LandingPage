@@ -58,11 +58,6 @@ const Benefits: React.FC = () => {
       title: 'Relatorios diversificados',
       description: 'Nossa equipe está sempre disponível para ajudar você a maximizar os resultados do seu blog.',
     },
-    {
-      icon: <SupportIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
-      title: 'Suporte Especializado',
-      description: 'Nossa equipe está sempre disponível para ajudar você a maximizar os resultados do seu blog.',
-    },
   ];
 
   return (

@@ -11,6 +11,13 @@ import {
 
 import { Person as PersonIcon } from '@mui/icons-material';
 
+const scrollToSection = (sectionId: string) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 const Header: React.FC = () => {
   const theme = useTheme();
 
@@ -18,7 +25,7 @@ const Header: React.FC = () => {
     { label: 'Início', href: '#inicio' },
     { label: 'Funcionalidades', href: '#funcionalidades' },
     { label: 'Planos', href: '#planos' },
-    { label: 'Blog', href: '#blog' },
+    { label: 'Sobre nós', href: '#sobrenos' },
   ];
 
   return (
@@ -36,12 +43,14 @@ const Header: React.FC = () => {
         <Toolbar sx={{ justifyContent: 'space-between', py: 1 }}>
           {/* Logo */}
           <Box
+            onClick={() => scrollToSection('inicio')}
             component="img"
             src="/assets/images/brokeris4.svg"
             alt="Logo do sistema"
             sx={{
-              width: { xs: '25px', md: '150px' },
-              height: { xs: '25px', md: '28px' },
+              cursor: 'pointer',
+              width: { xs: '110px', md: '150px' },
+              height: { xs: '18px', md: '28px' },
               display: 'flex',
             }}
           />
@@ -49,7 +58,7 @@ const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <Box 
             sx={{ 
-              display: 'flex',
+              display: { xs: 'none', md: 'flex' },
               alignItems: 'center',
               gap: 1,
               width: "500px",
@@ -58,6 +67,7 @@ const Header: React.FC = () => {
               <Button
                 key={item.label}
                 href={item.href}
+                onClick={() => scrollToSection(item.href)}
                 sx={{
                   color: theme.palette.text.secondary,
                   fontWeight: 600,
@@ -83,12 +93,14 @@ const Header: React.FC = () => {
           >
             <Button
               startIcon={<PersonIcon color="primary"/>}
+              onClick={() => window.open('https://www.brokeris.com.br/login', '_blank')}
+
               sx={{
                 color: theme.palette.primary.main,
                 fontWeight: 600,
                 '&:hover': {
                   color: theme.palette.primary.main,
-                  backgroundColor: 'transparent',
+                  // backgroundColor: 'transparent',
                 },
               }}
             >

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Box,
   Container,
@@ -6,10 +7,12 @@ import {
   useTheme,
   useMediaQuery,
 } from '@mui/material';
+
 import {
   Assignment as AssignmentIcon,
-  AutoAwesome as AutoAwesomeIcon,
   Analytics as AnalyticsIcon,
+  Description as DescriptionIcon,
+  RequestQuote as RequestQuoteIcon,
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 
@@ -21,21 +24,28 @@ const Steps: React.FC = () => {
     {
       icon: AssignmentIcon,
       title: 'Criar proposta',
-      description: 'Conte-nos sobre seu negócio, público-alvo e objetivos para personalizar sua estratégia de conteúdo.',
+      description: 'Crie propostas de forma rápida e organizada, com todos os dados do cliente e contrato em um só lugar.',
       color: '#1976d2',
     },
     {
-      icon: AutoAwesomeIcon,
+      icon: RequestQuoteIcon,
       title: 'Receber parcela',
-      description: 'Nossa inteligência artificial analisa tendências, gera artigos e planeja sua estratégia de marketing.',
+      description: 'Acompanhe parcelas recebidas e vencidas em tempo real, garantindo controle total do fluxo financeiro.',
       color: '#9c27b0',
     },
     {
-      icon: AnalyticsIcon,
+      icon: DescriptionIcon,
       title: 'Gerar recibos',
-      description: 'Receba relatórios semanais com métricas de performance e insights para otimizar seus resultados.',
+      description: 'Emita recibos de pagamento para sua equipe em apenas um clique, com histórico sempre disponível.',
       color: '#2e7d32',
     },
+    {
+      icon: AnalyticsIcon,
+      title: 'Relatório detalhado',
+      description: 'Tenha relatórios completos sobre contratos, comissões e lucratividade para decisões mais inteligentes.',
+      color: '#1644cc',
+    },
+    
   ];
 
   const containerVariants = {
@@ -78,6 +88,7 @@ const Steps: React.FC = () => {
 
   return (
     <Box
+      id="funcionalidades"
       sx={{
         py: { xs: 8, md: 12 },
         backgroundColor: '#f8f9fa',
@@ -85,19 +96,6 @@ const Steps: React.FC = () => {
         overflow: 'hidden',
       }}
     >
-      {/* Background decorative circles */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'url("data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23e3f2fd" fill-opacity="0.3"%3E%3Ccircle cx="20" cy="20" r="8"/%3E%3Ccircle cx="80" cy="40" r="12"/%3E%3Ccircle cx="40" cy="80" r="6"/%3E%3Ccircle cx="90" cy="90" r="4"/%3E%3Ccircle cx="10" cy="70" r="10"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
-          opacity: 0.6,
-        }}
-      />
-
       <Container maxWidth="lg">
         <motion.div
           initial="hidden"
@@ -135,7 +133,7 @@ const Steps: React.FC = () => {
                   lineHeight: 1.2,
                 }}
               >
-                Três passos simples para o sucesso
+                Quatro passos simples para o sucesso
               </Typography>
               
               <Typography
@@ -148,8 +146,7 @@ const Steps: React.FC = () => {
                   fontSize: { xs: '1rem', md: '1.1rem' },
                 }}
               >
-                Nossa plataforma automatiza todo o processo de criação de conteúdo, 
-                desde a configuração inicial até a análise de resultados.
+                Com esses quatro passos, você tem tudo que precisa para gerar um recibo de pagamentos automaticamente e ter total controle sobre suas vendas.
               </Typography>
             </motion.div>
           </Box>
@@ -172,10 +169,10 @@ const Steps: React.FC = () => {
                 style={{
                   position: 'absolute',
                   top: '50%',
-                  left: '10%',
-                  right: '10%',
+                  left: '12%',
+                  right: '12%',
                   height: '3px',
-                  background: 'linear-gradient(90deg, #1976d2 0%, #9c27b0 50%, #2e7d32 100%)',
+                  background: 'linear-gradient(90deg, #1976d2 0%, #9c27b0 30%, #2e7d32 60%, #1644cc 100%)',
                   borderRadius: '2px',
                   zIndex: 1,
                   transformOrigin: 'left center',
@@ -210,7 +207,7 @@ const Steps: React.FC = () => {
                   variants={stepVariants}
                   whileHover={{ 
                     scale: 1.05,
-                    transition: { duration: 0.2 }
+                    transition: { duration: 0.3 }
                   }}
                   style={{
                     display: 'flex',
@@ -264,10 +261,10 @@ const Steps: React.FC = () => {
                     }}
                     style={{
                       position: 'absolute',
-                      top: -10,
-                      right: isMobile ? 'calc(50% - 20px)' : 20,
-                      width: 40,
-                      height: 40,
+                      top: -15,
+                      right: isMobile ? 'calc(50% - 20px)' : 120,
+                      width: 30,
+                      height: 30,
                       borderRadius: '50%',
                       backgroundColor: step.color,
                       color: 'white',

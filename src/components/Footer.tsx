@@ -24,15 +24,13 @@ const Footer: React.FC = () => {
   const footerLinks = {
     company: [
       { label: 'Sobre Nós', href: '#sobre' },
-      { label: 'Nossa Equipe', href: '#equipe' },
-      { label: 'Carreiras', href: '#carreiras' },
       { label: 'Contato', href: '#contato' },
     ],
     product: [
       { label: 'Funcionalidades', href: '#funcionalidades' },
       { label: 'Planos', href: '#planos' },
       { label: 'Cases de Sucesso', href: '#cases' },
-      { label: 'Blog', href: '#blog' },
+      { label: 'Sobre nós', href: '#sobrenos' },
     ],
     support: [
       { label: 'Central de Ajuda', href: '#ajuda' },
@@ -43,7 +41,6 @@ const Footer: React.FC = () => {
     legal: [
       { label: 'Termos de Uso', href: '#termos' },
       { label: 'Política de Privacidade', href: '#privacidade' },
-      { label: 'Cookies', href: '#cookies' },
       { label: 'LGPD', href: '#lgpd' },
     ],
   };
@@ -69,28 +66,6 @@ const Footer: React.FC = () => {
           <Grid size={{xs: 12, md: 4}}>
             <Box sx={{ mb: 3 }}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
-                <Box
-                  sx={{
-                    width: 32,
-                    height: 32,
-                    backgroundColor: 'white',
-                    borderRadius: 1,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                >
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      color: theme.palette.primary.main,
-                      fontWeight: 'bold',
-                      fontSize: '1.2rem',
-                    }}
-                  >
-                    A
-                  </Typography>
-                </Box>
                 <Typography
                   variant="h6"
                   sx={{

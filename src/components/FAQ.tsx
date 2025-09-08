@@ -8,10 +8,12 @@ import {
   AccordionDetails,
   useTheme,
   useMediaQuery,
+  Button,
 } from '@mui/material';
 import {
   ExpandMore as ExpandMoreIcon,
 } from '@mui/icons-material';
+import { getLinkWhatApp } from '../Shared/Features';
 
 const FAQ: React.FC = () => {
   const theme = useTheme();
@@ -24,36 +26,40 @@ const FAQ: React.FC = () => {
 
   const faqs = [
     {
-      question: 'Preciso ter um blog para usar a Brokeris?',
-      answer: 'Não! A Brokeris pode criar um blog completo para você do zero, ou se conectar com seu blog existente. Você escolhe a opção que melhor se adapta ao seu negócio.',
+      question: 'Quais são os planos de mensalidade oferecidos pelo Brokeris ?',
+      answer: 'Temos um plano com todas funcionalidades e você precisar personalizar a quantidade de usuários.',
     },
     {
-      question: 'A Brokeris é um plugin de WordPress?',
-      answer: 'A Brokeris é uma plataforma completa de automação de conteúdo. Ela pode se conectar com WordPress e outras plataformas, mas não é apenas um plugin - é uma solução completa de marketing de conteúdo.',
+      question: 'Posso alterar meu plano a qualquer momento ?',
+      answer: "Sim, solicite um novo plano.",
     },
     {
-      question: 'Quanto tempo vou precisar gastar por mês?',
-      answer: 'Praticamente zero! A Brokeris foi desenvolvida para ser 100% automática. Você só precisa configurar uma vez e nossa IA cuida de tudo: criação de conteúdo, publicação, análise de concorrentes e relatórios.',
+      question: 'Como faço para cancelar meu plano ?',
+      answer: 'Sim, 15 dias de avaliação com tudo liberado.',
     },
     {
-      question: 'O blog que vou receber é no WordPress?',
-      answer: 'Sim! Nossos blogs são construídos em WordPress, a plataforma mais confiável e flexível do mercado. Isso garante máxima compatibilidade e facilidade de uso.',
+      question: 'Existe um número máximo de produtores (Corretores/Supervisores/Gerentes) ?',
+      answer: 'Não, é ilimitado o cadastro dos Corretores/Supervisores/Gerentes.',
     },
     {
-      question: 'Consigo conectar o meu domínio?',
-      answer: 'Sim! Você pode conectar seu próprio domínio personalizado ao blog criado pela Brokeris, mantendo a identidade da sua marca.',
+      question: 'Como faço para cancelar meu plano ?',
+      answer: 'Você pode solicitar o cancelamento a qualquer momento.',
     },
     {
-      question: 'Consigo personalizar o meu blog?',
-      answer: 'Sim! Nossos blogs vêm com design moderno e responsivo, mas você pode personalizar cores, fontes, layout e muito mais para combinar com a identidade da sua marca.',
+      question: 'Tenho direito a treinamento ?',
+      answer: 'Sim, solicite o treinamento, normalmente em 1 semana você fica apto 100%.',
     },
     {
-      question: 'Vou demorar para ter resultado?',
-      answer: 'Nossos clientes começam a ver resultados em 2-4 semanas. Alguns casos mostram melhorias significativas em apenas 20 dias. O tempo varia conforme a competitividade do seu nicho.',
+      question: 'Posso acessar pelo celular ?',
+      answer: 'Sim, o Brokeris é 100% online, você pode acessar de qualquer dispositivo com internet.',
     },
     {
-      question: 'Vocês garantem o meu resultado?',
-      answer: 'Garantimos que nossa IA fará tudo que prometemos: criar conteúdo, analisar concorrentes, otimizar SEO, etc. Os resultados de tráfego dependem de vários fatores externos, mas nossos clientes têm excelentes resultados.',
+      question: 'Meus dados estarão seguros ?',
+      answer: 'Sim. Usamos os servidores mais modernos do mercado, os mesmos de grandes marcas como Netflix e iFood..',
+    },
+    {
+      question: 'E se eu tiver mais algumas perguntas ?',
+      answer: 'Nós ficaremos felizes em respondê-las. Entre em contato pelo whats (11) 98573-7008.',
     },
   ];
 
@@ -188,6 +194,25 @@ const FAQ: React.FC = () => {
           >
             Entre em contato com o nosso time! Vamos responder suas dúvidas com o maior prazer 😊
           </Typography>
+
+          <Button
+            variant="contained" 
+            size="large" 
+            href={getLinkWhatApp(
+              "5521980143451", 
+              `Olá, tenho uma duvida: `
+            )}
+            sx={{
+              // backgroundColor: theme.palette.primary.main,
+              // border: '1px solid white',
+              color: 'black',
+              backgroundColor: 'white',
+              // '&:hover': {
+              //   backgroundColor: theme.palette.primary.dark,
+              // },
+          }}>
+            Entre em contato
+          </Button>
         </Box>
       </Container>
     </Box>

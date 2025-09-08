@@ -22,8 +22,10 @@ const Hero: React.FC = () => {
 
   return (
     <Box
+      id="inicio"
       sx={{
         // background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
+
         color: 'white',
         py: { xs: 8, md: 12 },
         position: 'relative',

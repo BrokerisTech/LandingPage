@@ -7,99 +7,80 @@ import {
   Card,
   CardContent,
   Button,
-  Chip,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   useTheme,
   useMediaQuery,
   alpha,
+  Divider,
 } from '@mui/material';
 import {
   Check as CheckIcon,
 } from '@mui/icons-material';
 
+const CompItem = ({title}: {title: string}) => {
+  return (
+    <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+      <CheckIcon sx={{ color: "#52b014", fontSize: 22, mr: 1 }} />
+      <Typography variant="body2" sx={{ color: theme =>  theme.palette.text.primary, fontSize: '0.8rem' }}>
+        {title}
+      </Typography>
+    </Box>
+  )
+}
+
 const Plans: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  const featuresNew = [
+    'Importação de proposta com IA',
+    'Upload de arquivos (Drive)',
+  ];
+
+  const detailedFeatures = [
+    'Propostas/Contratos ilimitados',
+    'Cadastro de produtores (Corretor/Supervisor/Gerente) ilimitado',
+    'Acesso online para o produtores acompanhar suas vendas, importações e recebimentos',
+    'Recibo para Corretor, supervisor e Gerente',
+    'Relatórios (PDF/EXCEL/DASHBOARD)',
+    'Software 100% online',
+  ]
 
   const plans = [
     {
       name: '2 Usuários',
       description: 'Ideal para quem tem 1 administrador',
       monthlyPrice: 300,
-      features: [
-        '1 blog automatizado',
-        '5 artigos por mês',
-        '50 palavras-chave',
-        '1 pessoa no time',
-      ],
-      detailedFeatures: [
-        'Blog automático com sua marca',
-        'Sugestões inteligentes de conteúdo',
-        'Linking interno e externo',
-        'Cursos completos de SEO',
-        'Análise de palavras-chave',
-        'Relatórios semanais no WhatsApp',
-      ],
+      featuresNew,
+      detailedFeatures,
       isPopular: false,
+      users: "2",
     },
     {
       name: '1 Usuário',
       description: 'Ideal para quem está sozinho no seu negócio',
       monthlyPrice: 200.0,
-      features: [
-        '1 blog automatizado',
-        '15 artigos por mês',
-        '150 palavras-chave',
-        '3 pessoas no time',
-      ],
-      detailedFeatures: [
-        'Tudo no plano Essential e mais',
-        'Blog com seu próprio domínio',
-        'Conexão com ferramentas de blog',
-        'Sugestões avançadas de conteúdo',
-        'Integração com redes sociais',
-        'Buscador de tendências (EM BREVE)',
-      ],
+      featuresNew,
+      detailedFeatures,
       isPopular: true,
+      users: "1",
     },
     {
       name: 'Personalizado (Usuários adicionais)',
       description: 'Ideal para médias/grandes empresas',
       monthlyPrice: 399,
-      features: [
-        '4 blogs automatizados',
-        '40 artigos por mês',
-        '500 palavras-chave',
-        '10 pessoas no time',
-      ],
-      detailedFeatures: [
-        'Tudo no plano Plus e mais',
-        'Programa de agência parceira',
-        'Desconto em blogs e artigos',
-        'Plugin WordPress white-label',
-        'Área do cliente',
-        'Relatórios com sua marca (EM BREVE)',
-      ],
+      featuresNew,
+      detailedFeatures,
       isPopular: false,
+      users: "3",
     },
   ];
 
-  const getPrice = (plan: any) => {
-    return plan.monthlyPrice
-  };
-
-  const getOriginalPrice = (plan: any) => {
-    return plan.monthlyPrice
-  };
-
   return (
-    <Box sx={{ 
-      py: { xs: 6, md: 8 }, 
-      background: theme => `linear-gradient(to bottom, #ffffff, ${alpha(theme.palette.primary.main, 0.2)}, #ffffff)`
-    }}>
+    <Box id="planos" 
+      sx={{ 
+        py: { xs: 6, md: 8 }, 
+        background: theme => `linear-gradient(to bottom, #ffffff, ${alpha(theme.palette.primary.main, 0.23)}, #ffffff)`
+      }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography
@@ -170,8 +151,8 @@ const Plans: React.FC = () => {
                       sx={{
                         color: theme.palette.primary.main,
                         fontWeight: 700,
-                        mb: 1,
                         fontSize: '1.2rem',
+                        mb: 1,
                       }}
                     >
                       {plan.name}
@@ -189,7 +170,7 @@ const Plans: React.FC = () => {
                   </Box>
 
                   {/* Pricing */}
-                  <Box sx={{ textAlign: 'center', mb: 2 }}>
+                  <Box sx={{ textAlign: 'center', mb: 4 }}>
                     <Box sx={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', mb: 1 }}>
                       <Typography
                         variant="h4"
@@ -199,85 +180,44 @@ const Plans: React.FC = () => {
                           fontSize: '2rem',
                         }}
                       >
-                        R${getPrice(plan)}
+                        R${plan.monthlyPrice}
                       </Typography>
                       <Typography
                         variant="body2"
                         sx={{
                           color: theme.palette.text.secondary,
                           ml: 1,
-                          fontSize: '0.9rem',
                         }}
                       >
                         /mês
                       </Typography>
                     </Box>
-                    {getOriginalPrice(plan) > getPrice(plan) && (
-                      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            color: theme.palette.text.secondary,
-                            textDecoration: 'line-through',
-                            fontSize: '0.8rem',
-                          }}
-                        >
-                          R${getOriginalPrice(plan)}
-                        </Typography>
-                        <Chip
-                          label={`BEMVINDO25`}
-                          size="small"
-                          sx={{
-                            backgroundColor: theme.palette.warning.main,
-                            color: 'white',
-                            fontSize: '0.65rem',
-                            height: 20,
-                          }}
-                        />
-                      </Box>
-                    )}
                   </Box>
 
                   {/* Key Features */}
                   <Box sx={{ mb: 2 }}>
-                    <Grid container spacing={1}>
-                      {plan.features.map((feature, featureIndex) => (
-                        <Grid size={{xs: 6}} key={featureIndex}>
-                          <Box sx={{ display: 'flex', alignItems: 'center', mb: 0.5 }}>
-                            <CheckIcon sx={{ color: theme.palette.success.main, fontSize: 14, mr: 0.5 }} />
-                            <Typography variant="body2" sx={{ color: theme.palette.text.primary, fontSize: '0.8rem' }}>
-                              {feature}
-                            </Typography>
-                          </Box>
-                        </Grid>
-                      ))}
-                    </Grid>
+                  <Typography variant="body2" sx={{ color: theme.palette.text.secondary, fontSize: '0.8rem', fontWeight: 600, mb: 1, textAlign: 'center' }}>
+                    NOVOS RECURSOS:
+                  </Typography>
+
+                  {plan.featuresNew.map((feature, featureIndex) => (
+                    <CompItem title={feature} key={featureIndex} />
+                  ))}
                   </Box>
 
-                  {/* Detailed Features */}
-                  <Box sx={{ mb: 3 }}>
-                    <List dense>
-                      {plan.detailedFeatures.slice(0, 4).map((feature, featureIndex) => (
-                        <ListItem key={featureIndex} sx={{ px: 0, py: 0.25 }}>
-                          <ListItemIcon sx={{ minWidth: 24 }}>
-                            <CheckIcon sx={{ color: theme.palette.success.main, fontSize: 14 }} />
-                          </ListItemIcon>
-                          <ListItemText
-                            primary={
-                              <Typography variant="body2" sx={{ color: theme.palette.text.primary, fontSize: '0.8rem' }}>
-                                {feature}
-                              </Typography>
-                            }
-                          />
-                        </ListItem>
-                      ))}
-                      {plan.detailedFeatures.length > 4 && (
-                        <Typography variant="body2" sx={{ color: theme.palette.text.secondary, fontSize: '0.75rem', textAlign: 'center', mt: 1 }}>
-                          +{plan.detailedFeatures.length - 4} recursos
-                        </Typography>
-                      )}
-                    </List>
+                  <Divider sx={{ my: 1 }} />
+
+                  <Box sx={{"*": {
+                    fontWeight: 600,
+                    fontSize: '0.9rem'
+                  
+                  }}}>
+                    <CompItem title={`Usuários: ${plan.users}`} />
                   </Box>
+
+                  {plan.detailedFeatures.map((feature, featureIndex) => (
+                    <CompItem title={feature}  key={featureIndex}/>
+                  ))}
 
                   {/* CTA Button */}
                   <Button
@@ -288,6 +228,7 @@ const Plans: React.FC = () => {
                       py: 1.2,
                       fontSize: '0.9rem',
                       fontWeight: 600,
+                      mt: 3,
                       '&:hover': {
                         backgroundColor: theme.palette.primary.dark,
                       },

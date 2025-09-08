@@ -46,7 +46,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: theme.palette.background.default }}>
+    <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: theme.palette.background.default }} id="sobrenos">
       <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="center">
           {/* Left Column - Text Content */}
