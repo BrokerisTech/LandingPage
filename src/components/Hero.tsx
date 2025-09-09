@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
       id="inicio"
       sx={{
         color: 'white',
-        py: { xs: 8, md: 12 },
+        py: { xs: 5, md: 12 },
         position: 'relative',
         overflow: 'hidden',
         borderRadius: " 0 0 35px 35px",
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
                 sx={{
                   textTransform: 'uppercase',
                   letterSpacing: 2,
-                  mb: 2,
+                  mb: { xs: 1, md: 2 },
                   fontWeight: 600,
                   color: theme.palette.primary.main,
                 }}
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
                 variant={isMobile ? 'h3' : 'h2'}
                 sx={{
                   fontWeight: 700,
-                  fontSize: { xs: '1.5rem', md: '2rem' },
+                  fontSize: { xs: '1.2rem', lg: '2rem' },
                   mb: 2,
                   lineHeight: 1.2,
                   color: theme.palette.text.primary,
@@ -74,10 +74,10 @@ const Hero: React.FC = () => {
               <Typography
                 variant="body1"
                 sx={{
-                  mb: 4,
+                  mb: { xs: 1, md: 4 },
                   opacity: 0.9,
                   lineHeight: 1.6,
-                  fontSize: { xs: '1rem', md: '1.1rem' },
+                  fontSize: { xs: '0.9rem', md: '1.1rem' },
                   color: theme.palette.text.primary,
                 }}
               >
@@ -85,17 +85,23 @@ const Hero: React.FC = () => {
                 sua corretora tem tudo em um só lugar: gestão de contratos, comissões e pagamentos, relatórios inteligentes e equipe conectada. Simples, moderno e feito para crescer
               </Typography>
 
-              <Button
-                variant="contained"
-                size="large"
-                sx={{
-                  px: 4,
-                  py: 1.5,
-                  fontSize: '1rem',
-                }}
-              >
-                Iniciar teste grátis por 15 dias
-              </Button>
+              <Box sx={{
+                display: { xs: 'none', md: 'block' },
+                justifyContent: { xs: 'center', },
+              }}>
+
+                <Button
+                  variant="contained"
+                  size="large"
+                  sx={{
+                    px: { xs: 2, md: 4 },
+                    py: { xs: 1, md: 1.5 },
+                    fontSize: { xs: '0.9rem', md: '1rem' },
+                  }}
+                >
+                  Iniciar teste grátis por 15 dias
+                </Button>
+              </Box>
             </Box>
           </Grid>
 
@@ -119,8 +125,8 @@ const Hero: React.FC = () => {
                   alt="Logo do sistema"
                   sx={{
                     cursor: 'pointer',
-                    width: { xs: '110px', md: '100%' },
-                    height: { xs: '18px', md: 'auto' },
+                    width: { xs: '100%', md: '100%' },
+                    height: { xs: 'auto', md: '300px' },
                     display: 'flex',
                   }}
                 />
@@ -132,12 +138,12 @@ const Hero: React.FC = () => {
                 <Card
                   sx={{
                     position: 'absolute',
-                    top: -40,
-                    left: -20,
+                    top: { xs: -50, md: -40 },
+                    left: { xs: 260, md: -20 },
                     backgroundColor: 'white',
                     borderRadius: 2,
-                    p: 2,
-                    minWidth: 200,
+                    p: { xs: 1, md: 2 },
+                    minWidth: { xs: 100, md: 200 },
                     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
                     zIndex: 2,
                   }}
@@ -163,6 +169,7 @@ const Hero: React.FC = () => {
                     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
                     zIndex: 2,
                     mt: -25,
+                    display: { xs: 'none', md: 'flex' },
                   }}
                 >
                   <Box
@@ -173,7 +180,7 @@ const Hero: React.FC = () => {
                       cursor: 'pointer',
                       width: { xs: '110px', md: '100%' },
                       height: { xs: '18px', md: 'auto' },
-                      display: 'flex',
+
                     }}
                   />
                 </Card>
@@ -181,6 +188,23 @@ const Hero: React.FC = () => {
             </Box>
           </Grid>
         </Grid>
+        <Box sx={{
+          display: { xs: 'flex', md: 'block' },
+          justifyContent: { xs: 'center', },
+        }}>
+
+          <Button
+            variant="contained"
+            size="large"
+            sx={{
+              px: { xs: 2, md: 4 },
+              py: { xs: 1, md: 1.5 },
+              fontSize: { xs: '0.9rem', md: '1rem' },
+            }}
+          >
+            Iniciar teste grátis por 15 dias
+          </Button>
+        </Box>
       </Container>
     </Box>
   );

@@ -15,7 +15,6 @@ import {
   Analytics as AnalyticsIcon,
   Group as GroupIcon,
   Security as SecurityIcon,
-  Support as SupportIcon,
 } from '@mui/icons-material';
 
 const Benefits: React.FC = () => {

@@ -7,7 +7,6 @@ import {
   AccordionSummary,
   AccordionDetails,
   useTheme,
-  useMediaQuery,
   Button,
 } from '@mui/material';
 import {
@@ -17,7 +16,6 @@ import { getLinkWhatApp } from '../Shared/Features';
 
 const FAQ: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [expanded, setExpanded] = useState<string | false>(false);
 
   const handleChange = (panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
@@ -80,11 +78,11 @@ const FAQ: React.FC = () => {
             FAQ
           </Typography>
           <Typography
-            variant={isMobile ? 'h3' : 'h2'}
             sx={{
               color: theme.palette.text.primary,
               fontWeight: 700,
               mb: 3,
+              fontSize: { xs: '1.6rem', md: '2rem' },
             }}
           >
             Perguntas frequentes
@@ -125,7 +123,7 @@ const FAQ: React.FC = () => {
                   sx={{
                     color: theme.palette.text.primary,
                     fontWeight: 600,
-                    fontSize: '1rem',
+                    fontSize: { xs: '0.9rem', md: '1rem' },
                   }}
                 >
                   {faq.question}
@@ -143,6 +141,7 @@ const FAQ: React.FC = () => {
                   sx={{
                     color: theme.palette.text.secondary,
                     lineHeight: 1.6,
+                    fontSize: { xs: '0.9rem', md: '1rem' },
                   }}
                 >
                   {faq.answer}
@@ -196,10 +195,10 @@ const FAQ: React.FC = () => {
           </Typography>
 
           <Button
-            variant="contained" 
-            size="large" 
+            variant="contained"
+            size="large"
             href={getLinkWhatApp(
-              "5521980143451", 
+              "5521980143451",
               `Olá, tenho uma duvida: `
             )}
             sx={{
@@ -210,7 +209,7 @@ const FAQ: React.FC = () => {
               // '&:hover': {
               //   backgroundColor: theme.palette.primary.dark,
               // },
-          }}>
+            }}>
             Entre em contato
           </Button>
         </Box>
