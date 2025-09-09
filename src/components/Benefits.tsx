@@ -6,136 +6,197 @@ import {
   Grid,
   Card,
   CardContent,
-  useTheme,
-  useMediaQuery,
 } from '@mui/material';
+
 import {
-  Speed as SpeedIcon,
-  AutoAwesome as AutoAwesomeIcon,
-  Analytics as AnalyticsIcon,
-  Group as GroupIcon,
-  Security as SecurityIcon,
+  ShoppingBag as ShoppingBagIcon,
+  TrendingUp as TrendingUpIcon,
+  Autorenew as AutorenewIcon,
+  CheckCircle as CheckCircleIcon,
+  WhatsApp as WhatsAppIcon,
+  SwapHoriz as SwapHorizIcon,
 } from '@mui/icons-material';
 
 const Benefits: React.FC = () => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  // const theme = useTheme();
+  // const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-  const benefits = [
+  const topCards = [
     {
-      icon: <SpeedIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
+      icon: <ShoppingBagIcon sx={{ fontSize: 32, color: theme => theme.palette.primary.main }} />,
       title: 'Controle de Proposta',
-      description: 'Tudo acontece automaticamente, sem necessidade de intervenção manual. Configure uma vez e deixe nossa IA trabalhar.',
+      description: 'Veja o que mais compram, entenda quando voltam, descubra produtos favoritos e acompanhe resultados na hora.',
+      backgroundColor: '#ecf6ff',
     },
     {
-      icon: <AutoAwesomeIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
+      icon: <TrendingUpIcon sx={{ fontSize: 32, color: theme => theme.palette.primary.main }} />,
       title: 'Controle de entradas de parcelas',
-      description: 'Nossa IA é especializada em SEO e criação de conteúdo, muito mais poderosa que ferramentas genéricas.',
+      description: 'Clientes gastam mais por compra, voltam com mais frequência, indicam para amigos e preferem sua loja contra a concorrência.',
+      backgroundColor: '#fff4e1',
     },
     {
-      icon: <AnalyticsIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
+      icon: <AutorenewIcon sx={{ fontSize: 32, color: theme => theme.palette.primary.main }} />,
       title: 'Geração de recibos de pagamentos',
-      description: 'Receba relatórios semanais completos via WhatsApp com todas as métricas importantes do seu blog.',
+      description: 'Cashback enviado na hora, Avisos automáticos no WhatsApp, Campanhas que rodam sozinhas, Zero trabalho manual.',
+      backgroundColor: '#ecf6ff',
     },
+  ];
+
+  const bottomCards = [
     {
-      icon: <AnalyticsIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
+      icon: <CheckCircleIcon sx={{ fontSize: 32, color: 'white' }} />,
       title: 'Relatórios Detalhados',
-      description: 'Receba relatórios semanais completos via WhatsApp com todas as métricas importantes do seu blog.',
+      description: [
+        '• 20% dos clientes voltam em 30 dias',
+        '• Ticket médio 30% maior',
+        '• Base de clientes que cresce todo dia',
+        '• ROI muito maior que desconto'
+      ],
+      backgroundColor: 'linear-gradient(90deg, #7143FF 0%, #7143FF 50%, #7143FF 50%, #7143FF 100%)',
+      textColor: 'white',
     },
     {
-      icon: <GroupIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
+      icon: (
+        <Box sx={{ display: 'flex', gap: 1 }}>
+          <WhatsAppIcon sx={{ fontSize: 24, color: 'white' }} />
+          <SwapHorizIcon sx={{ fontSize: 24, color: 'white' }} />
+          <AutorenewIcon sx={{ fontSize: 24, color: 'white' }} />
+        </Box>
+      ),
       title: 'Acesso online para o Produtor',
-      description: 'Descubra as melhores estratégias dos seus concorrentes e use isso a seu favor automaticamente.',
-    },
-    {
-      icon: <SecurityIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
-      title: 'Comissão organizada',
-      description: 'Nossa IA cria conteúdo que parece ter sido escrito por humanos, evitando penalizações do Google.',
+      description: [
+        '• 20% dos clientes voltam em 30 dias',
+        '• Ticket médio 30% maior',
+        '• Base de clientes que cresce todo dia',
+        '• ROI muito maior que desconto'
+      ],
+      backgroundColor: '#1f0073',
+      textColor: 'white',
     },
   ];
 
   return (
-    <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: theme.palette.background.default }}>
+    <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#FFFFFF' }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography
-            variant="body2"
+            variant="h2"
             sx={{
-              color: theme.palette.primary.main,
-              textTransform: 'uppercase',
-              letterSpacing: 2,
-              mb: 2,
-              fontWeight: 600,
-            }}
-          >
-            VANTAGENS
-          </Typography>
-          <Typography
-            variant={isMobile ? 'h3' : 'h2'}
-            sx={{
-              color: theme.palette.text.primary,
+              color: '#1F2937',
               fontWeight: 700,
               mb: 3,
+              fontSize: { xs: '2rem', md: '2.5rem' },
             }}
           >
-            Por que escolher a Brokeris?
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: theme.palette.text.secondary,
-              maxWidth: 600,
-              mx: 'auto',
-              fontSize: { xs: '1rem', md: '1.1rem' },
-            }}
-          >
-            Tudo que você precisa para gerenciar sua corretora de planos de saúde de forma simples e eficiente.
-            .
+            Tudo que você precisa
           </Typography>
         </Box>
 
-        <Grid container spacing={3}>
-          {benefits.map((benefit, index) => (
-            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+        {/* Top Row - 3 Cards */}
+        <Grid container spacing={3} sx={{ mb: 3 }}>
+          {topCards.map((card, index) => (
+            <Grid size={{ xs: 12, md: 4 }} key={index}>
               <Card
                 sx={{
                   height: '100%',
-                  textAlign: 'center',
-                  p: 2.5,
-                  transition: 'all 0.3s ease-in-out',
-                  border: '1px solid #e9ecef',
-                  '&:hover': {
-                    transform: 'translateY(-4px)',
-                    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)',
-                    borderColor: theme.palette.primary.main,
-                  },
+                  backgroundColor: card.backgroundColor,
+                  p: 3,
+                  borderRadius: 2,
+                  boxShadow: 'none',
+                  border: 'none',
                 }}
               >
                 <CardContent sx={{ p: 0 }}>
-                  <Box sx={{ mb: 2 }}>
-                    {benefit.icon}
+                  <Box sx={{ mb: 2, display: 'flex', alignItems: 'flex-start' }}>
+                    {card.icon}
                   </Box>
                   <Typography
                     variant="h6"
                     sx={{
-                      color: theme.palette.text.primary,
+                      color: '#1F2937',
                       fontWeight: 600,
-                      mb: 1.5,
+                      mb: 2,
                       fontSize: '1.1rem',
                     }}
                   >
-                    {benefit.title}
+                    {card.title}
                   </Typography>
                   <Typography
                     variant="body2"
                     sx={{
-                      color: theme.palette.text.secondary,
-                      lineHeight: 1.5,
+                      color: '#6B7280',
+                      lineHeight: 1.6,
                       fontSize: '0.9rem',
                     }}
                   >
-                    {benefit.description}
+                    {card.description}
                   </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+
+        {/* Bottom Row - 2 Cards */}
+        <Grid container spacing={3}>
+          {bottomCards.map((card, index) => (
+            <Grid size={{ xs: 12, md: 6 }} key={index}>
+              <Card
+                sx={{
+                  height: '100%',
+                  background: card.backgroundColor,
+                  p: 3,
+                  borderRadius: 2,
+                  boxShadow: 'none',
+                  border: 'none',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}
+              >
+                <CardContent sx={{ p: 0 }}>
+                  <Box sx={{ mb: 2, display: 'flex', alignItems: 'flex-start' }}>
+                    {card.icon}
+                  </Box>
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      color: card.textColor,
+                      fontWeight: 600,
+                      mb: 2,
+                      fontSize: '1.1rem',
+                    }}
+                  >
+                    {card.title}
+                  </Typography>
+                  {Array.isArray(card.description) ? (
+                    <Box>
+                      {card.description.map((item, idx) => (
+                        <Typography
+                          key={idx}
+                          variant="body2"
+                          sx={{
+                            color: card.textColor,
+                            lineHeight: 1.6,
+                            fontSize: '0.9rem',
+                            mb: 0.5,
+                          }}
+                        >
+                          {item}
+                        </Typography>
+                      ))}
+                    </Box>
+                  ) : (
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: card.textColor,
+                        lineHeight: 1.6,
+                        fontSize: '0.9rem',
+                      }}
+                    >
+                      {card.description}
+                    </Typography>
+                  )}
                 </CardContent>
               </Card>
             </Grid>

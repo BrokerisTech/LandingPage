@@ -16,11 +16,11 @@ import {
   Check as CheckIcon,
 } from '@mui/icons-material';
 
-const CompItem = ({ title }: { title: string }) => {
+const CompItem = ({ title, isUsers }: { title: string, isUsers?: boolean }) => {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
       <CheckIcon sx={{ color: "#52b014", fontSize: 22, mr: 1 }} />
-      <Typography variant="body2" sx={{ color: theme => theme.palette.text.primary, fontSize: '0.8rem' }}>
+      <Typography variant="body2" sx={{ color: theme => theme.palette.text.primary, fontSize: isUsers ? '0.9rem' : '0.8rem', fontWeight: isUsers ? 600 : 400 }}>
         {title}
       </Typography>
     </Box>
@@ -65,13 +65,13 @@ const Plans: React.FC = () => {
       users: "1",
     },
     {
-      name: 'Personalizado (Usuários adicionais)',
+      name: 'Personalizado',
       description: 'Ideal para médias/grandes empresas',
       monthlyPrice: 399,
       featuresNew,
       detailedFeatures,
       isPopular: false,
-      users: "3",
+      users: "3 - Usuários adicionais",
     },
   ];
 
@@ -107,16 +107,16 @@ const Plans: React.FC = () => {
           </Typography>
         </Box>
 
-        <Grid container spacing={3}>
+        <Grid container spacing={3} >
           {plans.map((plan, index) => (
             <Grid size={{ xs: 12, md: 4 }} key={index}>
               <Card
                 sx={{
-                  height: '100%',
                   position: 'relative',
                   border: plan.isPopular ? `2px solid ${theme.palette.primary.main}` : '1px solid #e9ecef',
                   transition: 'all 0.3s ease-in-out',
                   overflow: 'visible',
+                  scale: plan.isPopular ? 1.04 : 1,
                   '&:hover': {
                     transform: 'translateY(-4px)',
                     boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)',
@@ -184,10 +184,7 @@ const Plans: React.FC = () => {
                       </Typography>
                       <Typography
                         variant="body2"
-                        sx={{
-                          color: theme.palette.text.secondary,
-                          ml: 1,
-                        }}
+                        sx={{ color: theme.palette.text.secondary, ml: 1, }}
                       >
                         /mês
                       </Typography>
@@ -196,7 +193,15 @@ const Plans: React.FC = () => {
 
                   {/* Key Features */}
                   <Box sx={{ mb: 2 }}>
-                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary, fontSize: '0.8rem', fontWeight: 600, mb: 1, textAlign: 'center' }}>
+                    <Typography variant="body2"
+                      sx={{
+                        color: theme.palette.text.secondary,
+                        fontSize: '0.8rem',
+                        fontWeight: 600,
+                        mb: 1,
+                        textAlign: 'center',
+                        display: plan.featuresNew.length > 0 ? 'block' : 'none'
+                      }}>
                       NOVOS RECURSOS:
                     </Typography>
 
@@ -207,14 +212,8 @@ const Plans: React.FC = () => {
 
                   <Divider sx={{ my: 1 }} />
 
-                  <Box sx={{
-                    "*": {
-                      fontWeight: 600,
-                      fontSize: '0.9rem'
-
-                    }
-                  }}>
-                    <CompItem title={`Usuários: ${plan.users}`} />
+                  <Box>
+                    <CompItem title={`Usuários: ${plan.users}`} isUsers />
                   </Box>
 
                   {plan.detailedFeatures.map((feature, featureIndex) => (
@@ -236,7 +235,7 @@ const Plans: React.FC = () => {
                       },
                     }}
                   >
-                    Iniciar teste grátis
+                    Faça uma teste grátis
                   </Button>
                 </CardContent>
               </Card>

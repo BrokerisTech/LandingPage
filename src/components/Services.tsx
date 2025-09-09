@@ -15,19 +15,16 @@ const Services: React.FC = () => {
 
   const services = [
     {
-      title: '100% Online',
-      description: 'Baixíssimo tempo de carregamento, domínio customizável e otimizado para SEO',
-      image: '/api/placeholder/300/200',
+      title: '100% Online na palma da sua mão',
+      description: 'Acesse sua corretora de qualquer lugar, com total praticidade.',
     },
     {
       title: 'Criptografia de Dados (LGPD)',
-      description: 'Receba relatórios semanais e nunca mais nem entre na ferramenta acompanhe tudo por lá!',
-      image: '/api/placeholder/300/200',
+      description: 'Segurança completa com proteção e conformidade com a LGPD.',
     },
     {
-      title: 'Suporte Especializado',
-      description: 'Descubra os melhores artigos e palavras-chaves dos seus concorrentes',
-      image: '/api/placeholder/300/200',
+      title: 'Treinamento Especializado',
+      description: 'Suporte e capacitação para você aproveitar todo o sistema.',
     },
   ];
 

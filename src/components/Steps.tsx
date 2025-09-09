@@ -31,7 +31,7 @@ const Steps: React.FC = () => {
       icon: RequestQuoteIcon,
       title: 'Receber parcela',
       description: 'Acompanhe parcelas recebidas e vencidas em tempo real, garantindo controle total do fluxo financeiro.',
-      color: '#9c27b0',
+      color: '#FF6B35',
     },
     {
       icon: DescriptionIcon,
@@ -43,7 +43,7 @@ const Steps: React.FC = () => {
       icon: AnalyticsIcon,
       title: 'Relatório detalhado',
       description: 'Tenha relatórios completos sobre contratos, comissões e lucratividade para decisões mais inteligentes.',
-      color: '#1644cc',
+      color: '#1f0073',
     },
 
   ];
@@ -173,7 +173,7 @@ const Steps: React.FC = () => {
                   left: '12%',
                   right: '12%',
                   height: '3px',
-                  background: 'linear-gradient(90deg, #1976d2 0%, #9c27b0 30%, #2e7d32 60%, #1644cc 100%)',
+                  background: 'linear-gradient(90deg, #1976d2 0%, #FF6B35 30%, #2e7d32 60%, #1644cc 100%)',
                   borderRadius: '2px',
                   zIndex: 1,
                   transformOrigin: 'left center',
@@ -246,7 +246,7 @@ const Steps: React.FC = () => {
                     style={{
                       position: 'absolute',
                       top: -15,
-                      right: isMobile ? 'calc(50% - 20px)' : 120,
+                      right: isMobile ? 'calc(50% - 15px)' : 125,
                       width: 30,
                       height: 30,
                       borderRadius: '50%',
@@ -256,7 +256,7 @@ const Steps: React.FC = () => {
                       alignItems: 'center',
                       justifyContent: 'center',
                       fontWeight: 'bold',
-                      fontSize: '1.2rem',
+                      fontSize: isMobile ? '0.9rem' : '1.2rem',
                       boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)',
                     }}
                   >
