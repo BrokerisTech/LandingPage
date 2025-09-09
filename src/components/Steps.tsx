@@ -182,7 +182,7 @@ const Steps: React.FC = () => {
             )}
 
             {/* Background Line - Mobile */}
-            {isMobile && (
+            {!isMobile && (
               <motion.div
                 variants={lineVariants}
                 style={{
