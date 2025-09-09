@@ -7,6 +7,7 @@ import {
   Card,
   CardContent,
   useTheme,
+  Button,
 } from '@mui/material';
 
 const Services: React.FC = () => {
@@ -142,9 +143,29 @@ const Services: React.FC = () => {
                       {service.description}
                     </Typography>
                   </CardContent>
+
                 </Card>
               </Grid>
             ))}
+            <Box sx={{
+              justifyContent: { xs: 'center', },
+              width: '100%',
+              px: 2
+            }}>
+
+              <Button
+                variant="contained"
+                size="large"
+                fullWidth
+                sx={{
+                  px: { xs: 2, md: 4 },
+                  py: { xs: 1, md: 1.5 },
+                  fontSize: { xs: '0.9rem', md: '1rem' },
+                }}
+              >
+                Iniciar teste grátis por 15 dias
+              </Button>
+            </Box>
           </Grid>
         </Grid>
       </Container>

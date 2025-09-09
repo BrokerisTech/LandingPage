@@ -189,7 +189,7 @@ const Hero: React.FC = () => {
           </Grid>
         </Grid>
         <Box sx={{
-          display: { xs: 'flex', md: 'block' },
+          display: { xs: 'flex', md: 'none' },
           justifyContent: { xs: 'center', },
         }}>
 

@@ -17,6 +17,7 @@ import {
   LinkedIn as LinkedInIcon,
   Twitter as TwitterIcon,
 } from '@mui/icons-material';
+import { getLinkWhatApp } from '../Shared/Features';
 
 const Footer: React.FC = () => {
   const theme = useTheme();
@@ -63,7 +64,7 @@ const Footer: React.FC = () => {
       <Container maxWidth="lg">
         <Grid container spacing={4}>
           {/* Logo and Description */}
-          <Grid size={{xs: 12, md: 4}}>
+          <Grid size={{ xs: 12, md: 4 }}>
             <Box sx={{ mb: 3 }}>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
                 <Typography
@@ -85,7 +86,7 @@ const Footer: React.FC = () => {
                   mb: 3,
                 }}
               >
-                A plataforma de automação de conteúdo que revoluciona o marketing digital. 
+                A plataforma de automação de conteúdo que revoluciona o marketing digital.
                 Crie, publique e analise conteúdo automaticamente com nossa IA especializada.
               </Typography>
             </Box>
@@ -112,7 +113,7 @@ const Footer: React.FC = () => {
           </Grid>
 
           {/* Links Sections */}
-          <Grid size={{xs: 12, sm: 6, md: 2}}>
+          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
             <Typography
               variant="h6"
               sx={{
@@ -143,7 +144,7 @@ const Footer: React.FC = () => {
             </Box>
           </Grid>
 
-          <Grid size={{xs: 12, sm: 6, md: 2}}>
+          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
             <Typography
               variant="h6"
               sx={{
@@ -174,7 +175,7 @@ const Footer: React.FC = () => {
             </Box>
           </Grid>
 
-          <Grid size={{xs: 12, sm: 6, md: 2}}>
+          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
             <Typography
               variant="h6"
               sx={{
@@ -205,7 +206,7 @@ const Footer: React.FC = () => {
             </Box>
           </Grid>
 
-          <Grid size={{xs: 12, sm: 6, md: 2}}>
+          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
             <Typography
               variant="h6"
               sx={{
@@ -304,7 +305,10 @@ const Footer: React.FC = () => {
         }}
       >
         <IconButton
-          href="https://wa.me/5511999999999"
+          href={getLinkWhatApp(
+            "5521980143451",
+            `Olá, tenho uma duvida: `
+          )}
           target="_blank"
           rel="noopener noreferrer"
           sx={{

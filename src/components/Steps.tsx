@@ -45,7 +45,7 @@ const Steps: React.FC = () => {
       description: 'Tenha relatórios completos sobre contratos, comissões e lucratividade para decisões mais inteligentes.',
       color: '#1644cc',
     },
-    
+
   ];
 
   const containerVariants = {
@@ -60,8 +60,8 @@ const Steps: React.FC = () => {
   };
 
   const stepVariants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 50,
       scale: 0.8,
     },
@@ -123,7 +123,7 @@ const Steps: React.FC = () => {
               >
                 COMO FUNCIONA
               </Typography>
-              
+
               <Typography
                 variant={isMobile ? 'h4' : 'h3'}
                 sx={{
@@ -135,7 +135,7 @@ const Steps: React.FC = () => {
               >
                 Quatro passos simples para o sucesso
               </Typography>
-              
+
               <Typography
                 variant="body1"
                 sx={{
@@ -152,8 +152,8 @@ const Steps: React.FC = () => {
           </Box>
 
           {/* Steps Container */}
-          <Box 
-            sx={{ 
+          <Box
+            sx={{
               position: 'relative',
               display: 'flex',
               flexDirection: { xs: 'column', md: 'row' },
@@ -176,6 +176,7 @@ const Steps: React.FC = () => {
                   borderRadius: '2px',
                   zIndex: 1,
                   transformOrigin: 'left center',
+                  display: isMobile ? 'none' : 'block',
                 }}
               />
             )}
@@ -200,12 +201,12 @@ const Steps: React.FC = () => {
 
             {steps.map((step, index) => {
               const IconComponent = step.icon;
-              
+
               return (
                 <motion.div
                   key={index}
                   variants={stepVariants}
-                  whileHover={{ 
+                  whileHover={{
                     scale: 1.05,
                     transition: { duration: 0.3 }
                   }}
@@ -222,7 +223,7 @@ const Steps: React.FC = () => {
                 >
                   {/* Step Icon */}
                   <motion.div
-                    whileHover={{ 
+                    whileHover={{
                       rotate: [0, -5, 5, 0],
                       transition: { duration: 0.5 }
                     }}
@@ -253,7 +254,7 @@ const Steps: React.FC = () => {
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ 
+                    transition={{
                       delay: 0.8 + (index * 0.2),
                       type: "spring",
                       stiffness: 200,
@@ -284,9 +285,9 @@ const Steps: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ 
+                    transition={{
                       delay: 1 + (index * 0.2),
-                      duration: 0.6 
+                      duration: 0.6
                     }}
                   >
                     <Typography
@@ -300,7 +301,7 @@ const Steps: React.FC = () => {
                     >
                       {step.title}
                     </Typography>
-                    
+
                     <Typography
                       variant="body2"
                       sx={{
