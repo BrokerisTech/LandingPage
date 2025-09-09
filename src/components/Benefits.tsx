@@ -36,7 +36,7 @@ const Benefits: React.FC = () => {
         transformOrigin: 'center'
       }} />,
       title: 'Controle de Proposta',
-      description: 'Veja o que mais compram, entenda quando voltam, descubra produtos favoritos e acompanhe resultados na hora.',
+      description: 'Cadastre propostas de forma rápida e organizada, com todos os dados do cliente e contrato em um só lugar.',
       backgroundColor: '#ecf6ff',
     },
     {
@@ -47,7 +47,7 @@ const Benefits: React.FC = () => {
         transformOrigin: 'center'
       }} />,
       title: 'Controle de entradas de parcelas',
-      description: 'Clientes gastam mais por compra, voltam com mais frequência, indicam para amigos e preferem sua loja contra a concorrência.',
+      description: 'Acompanhe parcelas recebidas e vencidas em tempo real, garantindo controle total do fluxo financeiro.',
       backgroundColor: '#fff4e1',
     },
     {
@@ -58,7 +58,7 @@ const Benefits: React.FC = () => {
         transformOrigin: 'center'
       }} />,
       title: 'Geração de recibos de pagamentos',
-      description: 'Cashback enviado na hora, Avisos automáticos no WhatsApp, Campanhas que rodam sozinhas, Zero trabalho manual.',
+      description: 'Emita recibos de pagamento para sua equipe em apenas um clique, com histórico sempre disponível.',
       backgroundColor: '#ecf6ff',
     },
   ];
@@ -73,10 +73,10 @@ const Benefits: React.FC = () => {
       }} />,
       title: 'Relatórios Detalhados',
       description: [
-        '• 20% dos clientes voltam em 30 dias',
-        '• Ticket médio 30% maior',
-        '• Base de clientes que cresce todo dia',
-        '• ROI muito maior que desconto'
+        '• Relatórios de parcelas não recebidas',
+        '• Relatórios detalhado de comissões e lucro',
+        '• Relatórios de base de clientes',
+        '• Relatórios de vendedores / supervisores / gerentes'
       ],
       backgroundColor: 'linear-gradient(90deg, #7143FF 0%, #7143FF 50%, #7143FF 50%, #7143FF 100%)',
       textColor: 'white',
@@ -92,10 +92,9 @@ const Benefits: React.FC = () => {
       ),
       title: 'Acesso online para o Produtor',
       description: [
-        '• 20% dos clientes voltam em 30 dias',
-        '• Ticket médio 30% maior',
-        '• Base de clientes que cresce todo dia',
-        '• ROI muito maior que desconto'
+        '• Acesso para visualizar lista de recibos, comissões e lucro',
+        '• Acesso para anexar Nota fiscal',
+        '• Acesso para visualizar base de clientes',
       ],
       backgroundColor: '#1f0073',
       textColor: 'white',
