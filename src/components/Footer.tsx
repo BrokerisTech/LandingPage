@@ -25,6 +25,10 @@ const Footer: React.FC = () => {
       { label: 'Planos', href: '#planos' },
       { label: 'Sobre nós', href: '#sobrenos' },
     ],
+    contact: [
+      { label: '21 98014-3451', href: '#' },
+      { label: 'marketing@brokeris.com.br', href: '#' },
+    ],
   };
 
   return (
@@ -65,7 +69,7 @@ const Footer: React.FC = () => {
             </Box>
           </Grid>
 
-          <Grid size={{ xs: 12, sm: 6, md: 6 }}>
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
             <Typography
               variant="h6"
               sx={{
@@ -76,8 +80,45 @@ const Footer: React.FC = () => {
             >
               Produto
             </Typography>
-            <Box sx={{ display: 'flex', gap: 2 }}>
+            <Box >
               {footerLinks.product.map((link, index) => (
+                <>
+                  <Link
+                    key={index}
+                    href={link.href}
+                    sx={{
+                      color: 'rgba(255, 255, 255, 0.7)',
+                      textDecoration: 'none',
+                      '&:hover': {
+                        color: 'white',
+                        textDecoration: 'underline',
+                      },
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                  {index < footerLinks.product.length - 1 && (
+                    <Divider orientation="vertical" flexItem sx={{ background: 'white' }} />
+                  )}
+                </>
+              ))}
+
+            </Box>
+          </Grid>
+
+          <Grid size={{ xs: 12, sm: 6, md: 4 }}>
+            <Typography
+              variant="h6"
+              sx={{
+                color: 'white',
+                fontWeight: 600,
+                mb: 2,
+              }}
+            >
+              Contato
+            </Typography>
+            <Box >
+              {footerLinks.contact.map((link, index) => (
                 <>
                   <Link
                     key={index}

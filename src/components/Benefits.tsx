@@ -142,7 +142,7 @@ const Benefits: React.FC = () => {
                       color: '#1F2937',
                       fontWeight: 600,
                       mb: 2,
-                      fontSize: '1.1rem',
+                      fontSize: { xs: '1rem', md: '1.2rem' },
                     }}
                   >
                     {card.title}
