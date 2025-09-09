@@ -7,15 +7,21 @@ import {
   Card,
   CardContent,
 } from '@mui/material';
+import { keyframes } from '@mui/system';
 
 import {
   ShoppingBag as ShoppingBagIcon,
   TrendingUp as TrendingUpIcon,
   Autorenew as AutorenewIcon,
   CheckCircle as CheckCircleIcon,
-  WhatsApp as WhatsAppIcon,
   SwapHoriz as SwapHorizIcon,
 } from '@mui/icons-material';
+
+// Animação de balanço contínuo
+const wiggle = keyframes`
+  0% { transform: rotate(-25deg); }
+  100% { transform: rotate(25deg); }
+`;
 
 const Benefits: React.FC = () => {
   // const theme = useTheme();
@@ -23,19 +29,34 @@ const Benefits: React.FC = () => {
 
   const topCards = [
     {
-      icon: <ShoppingBagIcon sx={{ fontSize: 32, color: theme => theme.palette.primary.main }} />,
+      icon: <ShoppingBagIcon sx={{
+        fontSize: 32,
+        color: theme => theme.palette.primary.main,
+        animation: `${wiggle} 2s linear infinite alternate`,
+        transformOrigin: 'center'
+      }} />,
       title: 'Controle de Proposta',
       description: 'Veja o que mais compram, entenda quando voltam, descubra produtos favoritos e acompanhe resultados na hora.',
       backgroundColor: '#ecf6ff',
     },
     {
-      icon: <TrendingUpIcon sx={{ fontSize: 32, color: theme => theme.palette.primary.main }} />,
+      icon: <TrendingUpIcon sx={{
+        fontSize: 32,
+        color: theme => theme.palette.primary.main,
+        animation: `${wiggle} 2s linear infinite alternate`,
+        transformOrigin: 'center'
+      }} />,
       title: 'Controle de entradas de parcelas',
       description: 'Clientes gastam mais por compra, voltam com mais frequência, indicam para amigos e preferem sua loja contra a concorrência.',
       backgroundColor: '#fff4e1',
     },
     {
-      icon: <AutorenewIcon sx={{ fontSize: 32, color: theme => theme.palette.primary.main }} />,
+      icon: <AutorenewIcon sx={{
+        fontSize: 32,
+        color: theme => theme.palette.primary.main,
+        animation: `${wiggle} 2s linear infinite alternate`,
+        transformOrigin: 'center'
+      }} />,
       title: 'Geração de recibos de pagamentos',
       description: 'Cashback enviado na hora, Avisos automáticos no WhatsApp, Campanhas que rodam sozinhas, Zero trabalho manual.',
       backgroundColor: '#ecf6ff',
@@ -44,7 +65,12 @@ const Benefits: React.FC = () => {
 
   const bottomCards = [
     {
-      icon: <CheckCircleIcon sx={{ fontSize: 32, color: 'white' }} />,
+      icon: <CheckCircleIcon sx={{
+        fontSize: 32,
+        color: 'white',
+        animation: `${wiggle} 2s linear infinite alternate`,
+        transformOrigin: 'center'
+      }} />,
       title: 'Relatórios Detalhados',
       description: [
         '• 20% dos clientes voltam em 30 dias',
@@ -57,11 +83,12 @@ const Benefits: React.FC = () => {
     },
     {
       icon: (
-        <Box sx={{ display: 'flex', gap: 1 }}>
-          <WhatsAppIcon sx={{ fontSize: 24, color: 'white' }} />
-          <SwapHorizIcon sx={{ fontSize: 24, color: 'white' }} />
-          <AutorenewIcon sx={{ fontSize: 24, color: 'white' }} />
-        </Box>
+        <SwapHorizIcon sx={{
+          fontSize: 32,
+          color: 'white',
+          animation: `${wiggle} 2s linear infinite alternate`,
+          transformOrigin: 'center'
+        }} />
       ),
       title: 'Acesso online para o Produtor',
       description: [

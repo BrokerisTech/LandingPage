@@ -7,7 +7,6 @@ import {
   Card,
   Avatar,
   useTheme,
-  useMediaQuery,
 } from '@mui/material';
 import {
   Business as BusinessIcon,
@@ -17,7 +16,6 @@ import {
 
 const About: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const team = [
     {
@@ -66,11 +64,11 @@ const About: React.FC = () => {
               </Typography>
 
               <Typography
-                variant={isMobile ? 'h3' : 'h2'}
                 sx={{
                   color: theme.palette.text.primary,
-                  fontWeight: 700,
+                  fontWeight: { xs: 600, md: 700 },
                   mb: 3,
+                  fontSize: { xs: '1.8rem', md: '2.3rem' },
                 }}
               >
                 A revolução na gestão de corretoras de planos de saúde
@@ -82,7 +80,7 @@ const About: React.FC = () => {
                   color: theme.palette.text.secondary,
                   mb: 3,
                   lineHeight: 1.6,
-                  fontSize: { xs: '1rem', md: '1.1rem' },
+                  fontSize: { xs: '0.9rem', md: '1.1rem' },
                 }}
               >
                 O Brokeris nasceu da necessidade de simplificar a rotina das corretoras.
@@ -108,7 +106,7 @@ const About: React.FC = () => {
               {/* Values */}
               <Grid container spacing={2}>
                 {values.map((value, index) => (
-                  <Grid size={{ xs: 12, md: 6 }} key={index}>
+                  <Grid size={{ xs: 6, md: 6 }} key={index}>
                     <Box sx={{ textAlign: 'center' }}>
                       <Box sx={{ mb: 1.5 }}>
                         {value.icon}
@@ -163,12 +161,7 @@ const About: React.FC = () => {
                       sx={{
                         textAlign: 'center',
                         p: 3.5,
-                        transition: 'all 0.3s ease-in-out',
                         border: '1px solid #e9ecef',
-                        '&:hover': {
-                          transform: 'translateY(-4px)',
-                          boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)',
-                        },
                       }}
                     >
                       <Avatar

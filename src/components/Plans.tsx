@@ -151,7 +151,7 @@ const Plans: React.FC = () => {
                       sx={{
                         color: theme.palette.primary.main,
                         fontWeight: 700,
-                        fontSize: '1.2rem',
+                        fontSize: { xs: '1.1rem', md: '1.2rem' },
                         mb: 1,
                       }}
                     >
@@ -161,8 +161,8 @@ const Plans: React.FC = () => {
                       variant="body2"
                       sx={{
                         color: theme.palette.text.secondary,
-                        mb: 2,
-                        fontSize: '0.85rem',
+                        mb: { xs: 1, md: 2 },
+                        fontSize: { xs: '0.8rem', md: '0.85rem' },
                       }}
                     >
                       {plan.description}
@@ -170,14 +170,14 @@ const Plans: React.FC = () => {
                   </Box>
 
                   {/* Pricing */}
-                  <Box sx={{ textAlign: 'center', mb: 4 }}>
+                  <Box sx={{ textAlign: 'center', mb: { xs: 2, md: 4 } }}>
                     <Box sx={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', mb: 1 }}>
                       <Typography
                         variant="h4"
                         sx={{
                           color: theme.palette.text.primary,
                           fontWeight: 700,
-                          fontSize: '2rem',
+                          fontSize: { xs: '1.8rem', md: '2rem' },
                         }}
                       >
                         R${plan.monthlyPrice}
@@ -196,11 +196,11 @@ const Plans: React.FC = () => {
                     <Typography variant="body2"
                       sx={{
                         color: theme.palette.text.secondary,
-                        fontSize: '0.8rem',
                         fontWeight: 600,
                         mb: 1,
                         textAlign: 'center',
-                        display: plan.featuresNew.length > 0 ? 'block' : 'none'
+                        display: plan.featuresNew.length > 0 ? 'block' : 'none',
+                        fontSize: { xs: '0.7rem', md: '0.8rem' },
                       }}>
                       NOVOS RECURSOS:
                     </Typography>
@@ -226,10 +226,10 @@ const Plans: React.FC = () => {
                     fullWidth
                     sx={{
                       backgroundColor: theme.palette.primary.main,
-                      py: 1.2,
+                      py: { xs: 1, md: 1.2 },
                       fontSize: '0.9rem',
                       fontWeight: 600,
-                      mt: 3,
+                      mt: { xs: 2, md: 3 },
                       '&:hover': {
                         backgroundColor: theme.palette.primary.dark,
                       },
