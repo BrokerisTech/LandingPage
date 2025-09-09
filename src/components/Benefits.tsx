@@ -53,11 +53,6 @@ const Benefits: React.FC = () => {
       title: 'Comissão organizada',
       description: 'Nossa IA cria conteúdo que parece ter sido escrito por humanos, evitando penalizações do Google.',
     },
-    {
-      icon: <SupportIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
-      title: 'Relatorios diversificados',
-      description: 'Nossa equipe está sempre disponível para ajudar você a maximizar os resultados do seu blog.',
-    },
   ];
 
   return (
@@ -95,14 +90,14 @@ const Benefits: React.FC = () => {
               fontSize: { xs: '1rem', md: '1.1rem' },
             }}
           >
-            Somos a única ferramenta do mercado que automatiza estratégias avançadas de SEO, 
+            Somos a única ferramenta do mercado que automatiza estratégias avançadas de SEO,
             criando conteúdos preparados para ranquear no Google e também nas IAs.
           </Typography>
         </Box>
 
         <Grid container spacing={3}>
           {benefits.map((benefit, index) => (
-            <Grid size={{xs: 12, sm: 6, md: 4}} key={index}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
               <Card
                 sx={{
                   height: '100%',

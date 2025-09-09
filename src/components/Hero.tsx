@@ -6,15 +6,9 @@ import {
   Button,
   Grid,
   Card,
-  CardContent,
   useTheme,
   useMediaQuery,
 } from '@mui/material';
-import {
-  TrendingUp as TrendingUpIcon,
-  Visibility as VisibilityIcon,
-  Mouse as MouseIcon,
-} from '@mui/icons-material';
 
 const Hero: React.FC = () => {
   const theme = useTheme();
@@ -24,8 +18,6 @@ const Hero: React.FC = () => {
     <Box
       id="inicio"
       sx={{
-        // background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.primary.dark} 100%)`,
-
         color: 'white',
         py: { xs: 8, md: 12 },
         position: 'relative',
@@ -46,11 +38,11 @@ const Hero: React.FC = () => {
           opacity: 0.3,
         }}
       />
-      
+
       <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="center">
           {/* Left Column - Text Content */}
-          <Grid  size={{xs: 12, md: 6.5}} >
+          <Grid size={{ xs: 12, md: 6.5 }} >
             <Box sx={{ position: 'relative', zIndex: 1 }}>
               <Typography
                 variant="body2"
@@ -74,11 +66,11 @@ const Hero: React.FC = () => {
                   color: theme.palette.text.primary,
                 }}
               >
-                  Organize comissões, simplifique pagamentos e tenha total visibilidade da lucratividade – <Box component={"strong"} sx={{ color: theme.palette.primary.main }}>
+                Organize comissões, simplifique pagamentos e tenha total visibilidade da lucratividade – <Box component={"strong"} sx={{ color: theme.palette.primary.main }}>
                   Tudo em um só sistema
-                  </Box>
+                </Box>
               </Typography>
-              
+
               <Typography
                 variant="body1"
                 sx={{
@@ -92,7 +84,7 @@ const Hero: React.FC = () => {
                 Chega de planilhas confusas e processos manuais. Com o Brokeris,
                 sua corretora tem tudo em um só lugar: gestão de contratos, comissões e pagamentos, relatórios inteligentes e equipe conectada. Simples, moderno e feito para crescer
               </Typography>
-              
+
               <Button
                 variant="contained"
                 size="large"
@@ -108,7 +100,7 @@ const Hero: React.FC = () => {
           </Grid>
 
           {/* Right Column - Dashboard Mockup */}
-          <Grid size={{xs: 12, md: 5.5}}>
+          <Grid size={{ xs: 12, md: 5.5 }}>
             <Box sx={{ position: 'relative', zIndex: 1 }}>
               {/* Main Dashboard Card */}
               <Card
@@ -116,48 +108,22 @@ const Hero: React.FC = () => {
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
                   backdropFilter: 'blur(10px)',
                   border: '1px solid rgba(255, 255, 255, 0.2)',
-                  borderRadius: 3,
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
-                  p: 3,
+                  borderRadius: 1,
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.125)',
                   mb: 3,
                 }}
               >
-                <CardContent sx={{ p: 0 }}>
-                  {/* Dashboard Header */}
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-                    <Typography variant="h6" sx={{ color: 'white', fontWeight: 600 }}>
-                      Dashboard
-                    </Typography>
-                    <Box sx={{ display: 'flex', gap: 1 }}>
-                      <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: 'rgba(255, 255, 255, 0.3)' }} />
-                      <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: 'rgba(255, 255, 255, 0.3)' }} />
-                      <Box sx={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: 'rgba(255, 255, 255, 0.3)' }} />
-                    </Box>
-                  </Box>
-                  
-                  {/* Content Blocks */}
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                    {[1, 2, 3].map((item) => (
-                      <Box
-                        key={item}
-                        sx={{
-                          height: 60,
-                          backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                          borderRadius: 2,
-                          display: 'flex',
-                          alignItems: 'center',
-                          px: 2,
-                        }}
-                      >
-                        <Box sx={{ width: 40, height: 40, backgroundColor: 'rgba(255, 255, 255, 0.2)', borderRadius: 1, mr: 2 }} />
-                        <Box sx={{ flex: 1 }}>
-                          <Box sx={{ height: 8, backgroundColor: 'rgba(255, 255, 255, 0.3)', borderRadius: 1, mb: 1, width: '80%' }} />
-                          <Box sx={{ height: 6, backgroundColor: 'rgba(255, 255, 255, 0.2)', borderRadius: 1, width: '60%' }} />
-                        </Box>
-                      </Box>
-                    ))}
-                  </Box>
-                </CardContent>
+                <Box
+                  component="img"
+                  src="/assets/image.png"
+                  alt="Logo do sistema"
+                  sx={{
+                    cursor: 'pointer',
+                    width: { xs: '110px', md: '100%' },
+                    height: { xs: '18px', md: 'auto' },
+                    display: 'flex',
+                  }}
+                />
               </Card>
 
               {/* Floating Cards */}
@@ -166,7 +132,7 @@ const Hero: React.FC = () => {
                 <Card
                   sx={{
                     position: 'absolute',
-                    top: -50,
+                    top: -40,
                     left: -20,
                     backgroundColor: 'white',
                     borderRadius: 2,
@@ -176,7 +142,7 @@ const Hero: React.FC = () => {
                     zIndex: 2,
                   }}
                 >
-            
+
                   <Box sx={{ display: 'flex', gap: 1 }}>
                     <Box sx={{ width: 24, height: 24, backgroundColor: '#0077b5', borderRadius: 1 }} />
                     <Box sx={{ width: 24, height: 24, backgroundColor: '#1877f2', borderRadius: 1 }} />
@@ -189,47 +155,27 @@ const Hero: React.FC = () => {
                   sx={{
                     position: 'absolute',
                     top: 100,
-                    right: -20,
+                    right: -140,
                     backgroundColor: 'white',
                     borderRadius: 2,
                     p: 2,
-                    minWidth: 180,
+                    width: '320px',
                     boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
                     zIndex: 2,
-                    mt: -30,
+                    mt: -25,
                   }}
                 >
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
-                    <MouseIcon sx={{ color: theme.palette.primary.main, mr: 1, fontSize: 20 }} />
-                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
-                      Cliques
-                    </Typography>
-                  </Box>
-                  <Typography variant="h6" sx={{ color: theme.palette.text.primary, fontWeight: 'bold', mb: 1 }}>
-                    12.412
-                  </Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <TrendingUpIcon sx={{ color: theme.palette.success.main, fontSize: 16, mr: 0.5 }} />
-                    <Typography variant="body2" sx={{ color: theme.palette.success.main, fontWeight: 600 }}>
-                      +9.675
-                    </Typography>
-                  </Box>
-                  
-                  <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, mt: 2 }}>
-                    <VisibilityIcon sx={{ color: theme.palette.error.main, mr: 1, fontSize: 20 }} />
-                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary }}>
-                      Impressões
-                    </Typography>
-                  </Box>
-                  <Typography variant="h6" sx={{ color: theme.palette.text.primary, fontWeight: 'bold', mb: 1 }}>
-                    523.123
-                  </Typography>
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <TrendingUpIcon sx={{ color: theme.palette.success.main, fontSize: 16, mr: 0.5 }} />
-                    <Typography variant="body2" sx={{ color: theme.palette.success.main, fontWeight: 600 }}>
-                      +123.512
-                    </Typography>
-                  </Box>
+                  <Box
+                    component="img"
+                    src="/assets/recibo.png"
+                    alt="Logo do sistema"
+                    sx={{
+                      cursor: 'pointer',
+                      width: { xs: '110px', md: '100%' },
+                      height: { xs: '18px', md: 'auto' },
+                      display: 'flex',
+                    }}
+                  />
                 </Card>
               </Box>
             </Box>
