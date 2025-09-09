@@ -50,7 +50,7 @@ const About: React.FC = () => {
       <Container maxWidth="lg">
         <Grid container spacing={4} alignItems="center">
           {/* Left Column - Text Content */}
-          <Grid size={{xs: 12, md: 6}}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box>
               <Typography
                 variant="body2"
@@ -64,7 +64,7 @@ const About: React.FC = () => {
               >
                 SOBRE NÓS
               </Typography>
-              
+
               <Typography
                 variant={isMobile ? 'h3' : 'h2'}
                 sx={{
@@ -75,7 +75,7 @@ const About: React.FC = () => {
               >
                 A revolução na gestão de corretoras de planos de saúde
               </Typography>
-              
+
               <Typography
                 variant="body1"
                 sx={{
@@ -108,7 +108,7 @@ const About: React.FC = () => {
               {/* Values */}
               <Grid container spacing={2}>
                 {values.map((value, index) => (
-                  <Grid size={{xs: 12, md: 6}} key={index}>
+                  <Grid size={{ xs: 12, md: 6 }} key={index}>
                     <Box sx={{ textAlign: 'center' }}>
                       <Box sx={{ mb: 1.5 }}>
                         {value.icon}
@@ -142,7 +142,7 @@ const About: React.FC = () => {
           </Grid>
 
           {/* Right Column - Team */}
-          <Grid size={{xs: 12, md: 6}}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <Box>
               <Typography
                 variant="h4"
@@ -158,7 +158,7 @@ const About: React.FC = () => {
 
               <Grid container spacing={2}>
                 {team.map((member, index) => (
-                  <Grid size={{xs: 12, md: 12}} key={index}>
+                  <Grid size={{ xs: 12, md: 12 }} key={index}>
                     <Card
                       sx={{
                         textAlign: 'center',
@@ -218,25 +218,25 @@ const About: React.FC = () => {
                     textAlign: 'center',
                   }}
                 >
-                    <Typography
-                      variant="h4"
-                      sx={{
-                        fontWeight: 700,
-                        mb: 0.5,
-                        fontSize: '1.8rem',
-                      }}
-                    >
-                      20+ Anos
-                    </Typography>
-                    <Typography
-                      variant="body1"
-                      sx={{
-                        opacity: 0.9,
-                        fontSize: '0.9rem',
-                      }}
-                    >
-                      de experiência no mercado
-                    </Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      fontWeight: 700,
+                      mb: 0.5,
+                      fontSize: '1.8rem',
+                    }}
+                  >
+                    20+ Anos
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      opacity: 0.9,
+                      fontSize: '0.9rem',
+                    }}
+                  >
+                    de experiência no mercado
+                  </Typography>
                 </Card>
               </Box>
             </Box>

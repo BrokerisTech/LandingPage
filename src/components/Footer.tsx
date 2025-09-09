@@ -12,10 +12,6 @@ import {
 } from '@mui/material';
 import {
   WhatsApp as WhatsAppIcon,
-  Facebook as FacebookIcon,
-  Instagram as InstagramIcon,
-  LinkedIn as LinkedInIcon,
-  Twitter as TwitterIcon,
 } from '@mui/icons-material';
 import { getLinkWhatApp } from '../Shared/Features';
 
@@ -23,35 +19,13 @@ const Footer: React.FC = () => {
   const theme = useTheme();
 
   const footerLinks = {
-    company: [
-      { label: 'Sobre Nós', href: '#sobre' },
-      { label: 'Contato', href: '#contato' },
-    ],
     product: [
+      { label: 'Início', href: '#inicio' },
       { label: 'Funcionalidades', href: '#funcionalidades' },
       { label: 'Planos', href: '#planos' },
-      { label: 'Cases de Sucesso', href: '#cases' },
       { label: 'Sobre nós', href: '#sobrenos' },
     ],
-    support: [
-      { label: 'Central de Ajuda', href: '#ajuda' },
-      { label: 'Documentação', href: '#docs' },
-      { label: 'Status do Sistema', href: '#status' },
-      { label: 'Suporte Técnico', href: '#suporte' },
-    ],
-    legal: [
-      { label: 'Termos de Uso', href: '#termos' },
-      { label: 'Política de Privacidade', href: '#privacidade' },
-      { label: 'LGPD', href: '#lgpd' },
-    ],
   };
-
-  const socialLinks = [
-    { icon: <FacebookIcon />, href: '#', label: 'Facebook' },
-    { icon: <InstagramIcon />, href: '#', label: 'Instagram' },
-    { icon: <LinkedInIcon />, href: '#', label: 'LinkedIn' },
-    { icon: <TwitterIcon />, href: '#', label: 'Twitter' },
-  ];
 
   return (
     <Box
@@ -65,7 +39,7 @@ const Footer: React.FC = () => {
         <Grid container spacing={4}>
           {/* Logo and Description */}
           <Grid size={{ xs: 12, md: 4 }}>
-            <Box sx={{ mb: 3 }}>
+            <Box>
               <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
                 <Typography
                   variant="h6"
@@ -83,68 +57,15 @@ const Footer: React.FC = () => {
                 sx={{
                   color: 'rgba(255, 255, 255, 0.8)',
                   lineHeight: 1.6,
-                  mb: 3,
                 }}
               >
                 A plataforma de automação de conteúdo que revoluciona o marketing digital.
                 Crie, publique e analise conteúdo automaticamente com nossa IA especializada.
               </Typography>
             </Box>
-
-            {/* Social Links */}
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              {socialLinks.map((social, index) => (
-                <IconButton
-                  key={index}
-                  href={social.href}
-                  sx={{
-                    color: 'rgba(255, 255, 255, 0.7)',
-                    '&:hover': {
-                      color: 'white',
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    },
-                  }}
-                  aria-label={social.label}
-                >
-                  {social.icon}
-                </IconButton>
-              ))}
-            </Box>
           </Grid>
 
-          {/* Links Sections */}
-          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
-            <Typography
-              variant="h6"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                mb: 2,
-              }}
-            >
-              Empresa
-            </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              {footerLinks.company.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.href}
-                  sx={{
-                    color: 'rgba(255, 255, 255, 0.7)',
-                    textDecoration: 'none',
-                    '&:hover': {
-                      color: 'white',
-                      textDecoration: 'underline',
-                    },
-                  }}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </Box>
-          </Grid>
-
-          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
+          <Grid size={{ xs: 12, sm: 6, md: 6 }}>
             <Typography
               variant="h6"
               sx={{
@@ -155,85 +76,29 @@ const Footer: React.FC = () => {
             >
               Produto
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+            <Box sx={{ display: 'flex', gap: 2 }}>
               {footerLinks.product.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.href}
-                  sx={{
-                    color: 'rgba(255, 255, 255, 0.7)',
-                    textDecoration: 'none',
-                    '&:hover': {
-                      color: 'white',
-                      textDecoration: 'underline',
-                    },
-                  }}
-                >
-                  {link.label}
-                </Link>
+                <>
+                  <Link
+                    key={index}
+                    href={link.href}
+                    sx={{
+                      color: 'rgba(255, 255, 255, 0.7)',
+                      textDecoration: 'none',
+                      '&:hover': {
+                        color: 'white',
+                        textDecoration: 'underline',
+                      },
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                  {index < footerLinks.product.length - 1 && (
+                    <Divider orientation="vertical" flexItem sx={{ background: 'white' }} />
+                  )}
+                </>
               ))}
-            </Box>
-          </Grid>
 
-          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
-            <Typography
-              variant="h6"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                mb: 2,
-              }}
-            >
-              Suporte
-            </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              {footerLinks.support.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.href}
-                  sx={{
-                    color: 'rgba(255, 255, 255, 0.7)',
-                    textDecoration: 'none',
-                    '&:hover': {
-                      color: 'white',
-                      textDecoration: 'underline',
-                    },
-                  }}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </Box>
-          </Grid>
-
-          <Grid size={{ xs: 12, sm: 6, md: 2 }}>
-            <Typography
-              variant="h6"
-              sx={{
-                color: 'white',
-                fontWeight: 600,
-                mb: 2,
-              }}
-            >
-              Legal
-            </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              {footerLinks.legal.map((link, index) => (
-                <Link
-                  key={index}
-                  href={link.href}
-                  sx={{
-                    color: 'rgba(255, 255, 255, 0.7)',
-                    textDecoration: 'none',
-                    '&:hover': {
-                      color: 'white',
-                      textDecoration: 'underline',
-                    },
-                  }}
-                >
-                  {link.label}
-                </Link>
-              ))}
             </Box>
           </Grid>
         </Grid>
@@ -268,20 +133,6 @@ const Footer: React.FC = () => {
               gap: 2,
             }}
           >
-            <Link
-              href="#termos"
-              sx={{
-                color: 'rgba(255, 255, 255, 0.7)',
-                textDecoration: 'none',
-                fontSize: '0.875rem',
-                '&:hover': {
-                  color: 'white',
-                  textDecoration: 'underline',
-                },
-              }}
-            >
-              Conheça os Termos de uso e Políticas de privacidade da plataforma.
-            </Link>
             <Typography
               variant="body2"
               sx={{
@@ -289,7 +140,7 @@ const Footer: React.FC = () => {
                 fontSize: '0.875rem',
               }}
             >
-              Desenvolvido por Brokeris ❤️
+              Desenvolvido pela equipe Brokeris ❤️
             </Typography>
           </Box>
         </Box>
