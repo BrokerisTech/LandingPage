@@ -12,8 +12,8 @@ export const formatNumber = (num: number): string => {
 };
 
 export const scrollToSection = (sectionId: string): void => {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 };
