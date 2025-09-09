@@ -62,7 +62,7 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: theme.palette.background.paper }}>
+    <Box sx={{ py: { xs: 6, md: 8 } }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography

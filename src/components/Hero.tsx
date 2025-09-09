@@ -10,6 +10,11 @@ import {
   useMediaQuery,
 } from '@mui/material';
 
+import {
+  PlayCircleOutline as PlayCircleOutlineIcon,
+} from '@mui/icons-material';
+
+
 const Hero: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -86,8 +91,10 @@ const Hero: React.FC = () => {
               </Typography>
 
               <Box sx={{
-                display: { xs: 'none', md: 'block' },
-                justifyContent: { xs: 'center', },
+                display: { xs: 'none', md: 'flex' },
+                justifyContent: { xs: 'center', md: 'flex-start' },
+                alignItems: { xs: 'center', md: 'center' },
+                gap: 3
               }}>
 
                 <Button
@@ -101,6 +108,35 @@ const Hero: React.FC = () => {
                 >
                   Iniciar teste grátis por 15 dias
                 </Button>
+
+                <Box sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: 0.8,
+                  cursor: 'pointer',
+                  '&:hover': {
+                    opacity: 0.7,
+                    transition: 'opacity 0.3s ease-in-out, scale 0.3s ease-in-out',
+                    scale: 1.03,
+                  },
+
+                }}>
+                  <PlayCircleOutlineIcon sx={{
+                    color: theme.palette.primary.main,
+                    fontSize: { xs: '0.9rem', md: '1.2rem' },
+                    '&:hover > *': {
+                      opacity: 0.8,
+                    },
+                  }} />
+                  <Typography sx={{
+                    color: theme.palette.primary.main,
+                    fontSize: { xs: '0.9rem', md: '0.9rem' },
+                    fontWeight: 600,
+                    display: { xs: 'none', md: 'block' },
+                  }}>
+                    Veja como funciona a plataforma
+                  </Typography>
+                </Box>
               </Box>
             </Box>
           </Grid>

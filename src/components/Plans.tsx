@@ -16,11 +16,11 @@ import {
   Check as CheckIcon,
 } from '@mui/icons-material';
 
-const CompItem = ({title}: {title: string}) => {
+const CompItem = ({ title }: { title: string }) => {
   return (
     <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
       <CheckIcon sx={{ color: "#52b014", fontSize: 22, mr: 1 }} />
-      <Typography variant="body2" sx={{ color: theme =>  theme.palette.text.primary, fontSize: '0.8rem' }}>
+      <Typography variant="body2" sx={{ color: theme => theme.palette.text.primary, fontSize: '0.8rem' }}>
         {title}
       </Typography>
     </Box>
@@ -76,10 +76,10 @@ const Plans: React.FC = () => {
   ];
 
   return (
-    <Box id="planos" 
-      sx={{ 
-        py: { xs: 6, md: 8 }, 
-        background: theme => `linear-gradient(to bottom, #ffffff, ${alpha(theme.palette.primary.main, 0.23)}, #ffffff)`
+    <Box id="planos"
+      sx={{
+        py: { xs: 6, md: 8 },
+        background: theme => `linear-gradient(to bottom, #ffffff, ${alpha(theme.palette.primary.main, 0.16)}, #ffffff)`
       }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
@@ -109,7 +109,7 @@ const Plans: React.FC = () => {
 
         <Grid container spacing={3}>
           {plans.map((plan, index) => (
-            <Grid size={{xs: 12, md: 4}} key={index}>
+            <Grid size={{ xs: 12, md: 4 }} key={index}>
               <Card
                 sx={{
                   height: '100%',
@@ -196,27 +196,29 @@ const Plans: React.FC = () => {
 
                   {/* Key Features */}
                   <Box sx={{ mb: 2 }}>
-                  <Typography variant="body2" sx={{ color: theme.palette.text.secondary, fontSize: '0.8rem', fontWeight: 600, mb: 1, textAlign: 'center' }}>
-                    NOVOS RECURSOS:
-                  </Typography>
+                    <Typography variant="body2" sx={{ color: theme.palette.text.secondary, fontSize: '0.8rem', fontWeight: 600, mb: 1, textAlign: 'center' }}>
+                      NOVOS RECURSOS:
+                    </Typography>
 
-                  {plan.featuresNew.map((feature, featureIndex) => (
-                    <CompItem title={feature} key={featureIndex} />
-                  ))}
+                    {plan.featuresNew.map((feature, featureIndex) => (
+                      <CompItem title={feature} key={featureIndex} />
+                    ))}
                   </Box>
 
                   <Divider sx={{ my: 1 }} />
 
-                  <Box sx={{"*": {
-                    fontWeight: 600,
-                    fontSize: '0.9rem'
-                  
-                  }}}>
+                  <Box sx={{
+                    "*": {
+                      fontWeight: 600,
+                      fontSize: '0.9rem'
+
+                    }
+                  }}>
                     <CompItem title={`Usuários: ${plan.users}`} />
                   </Box>
 
                   {plan.detailedFeatures.map((feature, featureIndex) => (
-                    <CompItem title={feature}  key={featureIndex}/>
+                    <CompItem title={feature} key={featureIndex} />
                   ))}
 
                   {/* CTA Button */}

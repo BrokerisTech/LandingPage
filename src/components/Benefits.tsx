@@ -89,8 +89,8 @@ const Benefits: React.FC = () => {
               fontSize: { xs: '1rem', md: '1.1rem' },
             }}
           >
-            Somos a única ferramenta do mercado que automatiza estratégias avançadas de SEO,
-            criando conteúdos preparados para ranquear no Google e também nas IAs.
+            Tudo que você precisa para gerenciar sua corretora de planos de saúde de forma simples e eficiente.
+            .
           </Typography>
         </Box>
 

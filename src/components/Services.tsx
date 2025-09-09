@@ -32,7 +32,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <Box sx={{ py: { xs: 4, md: 5 }, backgroundColor: theme.palette.background.paper }}>
+    <Box sx={{ py: { xs: 4, md: 5 }, backgroundColor: "#ecf6ff" }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography
@@ -55,7 +55,7 @@ const Services: React.FC = () => {
               mb: 2,
             }}
           >
-            Simplicidade e eficiente
+            Simplicidade e eficiência
           </Typography>
         </Box>
 
@@ -69,14 +69,12 @@ const Services: React.FC = () => {
                   backdropFilter: 'blur(10px)',
                   border: '1px solid rgba(255, 255, 255, 0.2)',
                   borderRadius: 3,
-                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1)',
                   p: 3,
                   mb: 3,
                   height: '400px',
                 }}
               >
                 <CardContent sx={{ p: 0 }}>
-
                   {/* Content Blocks */}
                   <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                     {[1, 2, 3].map((item) => (
@@ -110,13 +108,11 @@ const Services: React.FC = () => {
                 <Card
                   sx={{
                     height: '100%',
+                    borderRadius: 0,
                     transition: 'all 0.3s ease-in-out',
-                    border: '1px solid #e9ecef',
-                    '&:hover': {
-                      transform: 'translateY(-4px)',
-                      boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)',
-                      borderColor: theme.palette.primary.main,
-                    },
+                    borderRight: '4px solid #0683ff',
+                    background: "none",
+                    textAlign: "right"
                   }}
                 >
                   <CardContent sx={{ p: 2, textAlign: 'center' }}>
@@ -127,6 +123,7 @@ const Services: React.FC = () => {
                         fontWeight: 600,
                         mb: 1.5,
                         fontSize: '1.1rem',
+                        textAlign: "left"
                       }}
                     >
                       {service.title}
@@ -138,6 +135,7 @@ const Services: React.FC = () => {
                         color: theme.palette.text.secondary,
                         lineHeight: 1.5,
                         fontSize: '0.9rem',
+                        textAlign: "left"
                       }}
                     >
                       {service.description}

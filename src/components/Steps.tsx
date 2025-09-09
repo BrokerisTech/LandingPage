@@ -91,7 +91,7 @@ const Steps: React.FC = () => {
       id="funcionalidades"
       sx={{
         py: { xs: 8, md: 12 },
-        backgroundColor: '#f8f9fa',
+        backgroundColor: '#ecf6ff',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -131,6 +131,7 @@ const Steps: React.FC = () => {
                   color: theme.palette.text.primary,
                   mb: 3,
                   lineHeight: 1.2,
+                  fontSize: { xs: '1.3rem', md: '2rem' },
                 }}
               >
                 Quatro passos simples para o sucesso
@@ -176,25 +177,7 @@ const Steps: React.FC = () => {
                   borderRadius: '2px',
                   zIndex: 1,
                   transformOrigin: 'left center',
-                  display: isMobile ? 'none' : 'block',
-                }}
-              />
-            )}
-
-            {/* Background Line - Mobile */}
-            {!isMobile && (
-              <motion.div
-                variants={lineVariants}
-                style={{
-                  position: 'absolute',
-                  left: '50%',
-                  top: '60px',
-                  bottom: '60px',
-                  width: '3px',
-                  background: 'linear-gradient(180deg, #1976d2 0%, #9c27b0 50%, #2e7d32 100%)',
-                  borderRadius: '2px',
-                  zIndex: 1,
-                  transformOrigin: 'top center',
+                  // display: isMobile ? 'none' : 'block',
                 }}
               />
             )}
@@ -228,8 +211,8 @@ const Steps: React.FC = () => {
                       transition: { duration: 0.5 }
                     }}
                     style={{
-                      width: 120,
-                      height: 120,
+                      width: isMobile ? 80 : 120,
+                      height: isMobile ? 80 : 120,
                       borderRadius: '50%',
                       backgroundColor: 'white',
                       border: `3px solid ${step.color}`,
@@ -243,7 +226,7 @@ const Steps: React.FC = () => {
                   >
                     <IconComponent
                       style={{
-                        fontSize: 48,
+                        fontSize: isMobile ? 32 : 48,
                         color: step.color,
                       }}
                     />
