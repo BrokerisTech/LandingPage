@@ -8,6 +8,7 @@ import {
   AccordionDetails,
   useTheme,
   Button,
+  useMediaQuery,
 } from '@mui/material';
 import {
   ExpandMore as ExpandMoreIcon,
@@ -17,6 +18,8 @@ import { getLinkWhatApp } from '../Shared/Features';
 const FAQ: React.FC = () => {
   const theme = useTheme();
   const [expanded, setExpanded] = useState<string | false>(false);
+
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const handleChange = (panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
     setExpanded(isExpanded ? panel : false);
@@ -62,7 +65,7 @@ const FAQ: React.FC = () => {
   ];
 
   return (
-    <Box sx={{ py: { xs: 6, md: 8 } }}>
+    <Box sx={{ py: { xs: 4, md: 8 } }}>
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography
@@ -82,7 +85,7 @@ const FAQ: React.FC = () => {
               color: theme.palette.text.primary,
               fontWeight: 700,
               mb: 3,
-              fontSize: { xs: '1.6rem', md: '2rem' },
+              fontSize: { xs: '1.5rem', md: '2rem' },
             }}
           >
             Perguntas frequentes
@@ -123,7 +126,7 @@ const FAQ: React.FC = () => {
                   sx={{
                     color: theme.palette.text.primary,
                     fontWeight: 600,
-                    fontSize: { xs: '0.9rem', md: '1rem' },
+                    fontSize: { xs: '0.8rem', md: '1rem' },
                   }}
                 >
                   {faq.question}
@@ -141,7 +144,7 @@ const FAQ: React.FC = () => {
                   sx={{
                     color: theme.palette.text.secondary,
                     lineHeight: 1.6,
-                    fontSize: { xs: '0.9rem', md: '1rem' },
+                    fontSize: { xs: '0.8rem', md: '1rem' },
                   }}
                 >
                   {faq.answer}
@@ -155,7 +158,7 @@ const FAQ: React.FC = () => {
         <Box
           sx={{
             mt: 8,
-            p: 4,
+            p: { xs: 3, md: 4 },
             backgroundColor: theme.palette.primary.light,
             borderRadius: 3,
             textAlign: 'center',
@@ -180,6 +183,7 @@ const FAQ: React.FC = () => {
               color: 'white',
               fontWeight: 700,
               mb: 2,
+              fontSize: { xs: '1.2rem', md: '1.5rem' },
             }}
           >
             Continua com dúvidas?
@@ -189,6 +193,7 @@ const FAQ: React.FC = () => {
             sx={{
               color: 'rgba(255, 255, 255, 0.9)',
               mb: 3,
+              fontSize: { xs: '0.8rem', md: '1rem' },
             }}
           >
             Entre em contato com o nosso time! Vamos responder suas dúvidas com o maior prazer 😊
@@ -196,7 +201,7 @@ const FAQ: React.FC = () => {
 
           <Button
             variant="contained"
-            size="large"
+            size={isMobile ? "small" : "large"}
             href={getLinkWhatApp(
               "5521980143451",
               `Olá, tenho uma duvida: `

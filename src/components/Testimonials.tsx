@@ -18,6 +18,11 @@ const Testimonials: React.FC = () => {
 
   const testimonials = [
     {
+      name: 'Marcos Silva, Gerente de Corretora em São Paulo',
+      avatar: '/api/placeholder/60/60',
+      description: 'Antes do Brokeris eu me perdia com planilhas e pagamentos atrasados. Hoje tenho todo o controle das comissões em tempo real e minha equipe acompanha tudo online. Simplificou totalmente a gestão.',
+    },
+    {
       name: 'Rodrigo Ferreira, Diretor de Corretora em Curitiba',
       avatar: '/api/placeholder/60/60',
       description: 'Com os relatórios detalhados do Brokeris consigo enxergar claramente o lucro, as parcelas a vencer e os gastos com cada produtor. Hoje tomo decisões muito mais seguras e rápidas.',
@@ -27,17 +32,12 @@ const Testimonials: React.FC = () => {
       avatar: '/api/placeholder/60/60',
       description: 'O que mais me impressiona é poder gerar todos os recibos da equipe em um clique. Isso economiza horas de trabalho todo mês e traz uma transparência enorme para os produtores.',
     },
-    {
-      name: 'Marcos Silva, Gerente de Corretora em São Paulo',
-      avatar: '/api/placeholder/60/60',
-      description: 'Antes do Brokeris eu me perdia com planilhas e pagamentos atrasados. Hoje tenho todo o controle das comissões em tempo real e minha equipe acompanha tudo online. Simplificou totalmente a gestão.',
-    },
   ];
 
   return (
     <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: theme.palette.background.default }}>
       <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 6 }}>
+        <Box sx={{ textAlign: 'center', mb: { xs: 3, md: 6 } }}>
           <Typography
             variant="body2"
             sx={{
@@ -56,6 +56,7 @@ const Testimonials: React.FC = () => {
               color: theme.palette.text.primary,
               fontWeight: 700,
               mb: 3,
+              fontSize: { xs: '1.5rem', md: '2rem' },
             }}
           >
             Veja os resultados dos nossos clientes
@@ -64,7 +65,7 @@ const Testimonials: React.FC = () => {
 
         <Grid container spacing={3}>
           {testimonials.map((testimonial, index) => (
-            <Grid size={{xs: 12, md: 4}} key={index}>
+            <Grid size={{ xs: 12, md: 4 }} key={index}>
               <Card
                 sx={{
                   height: '100%',
@@ -80,16 +81,21 @@ const Testimonials: React.FC = () => {
                     <Avatar
                       src={testimonial.avatar}
                       sx={{
-                        width: 48,
-                        height: 48,
+                        width: { xs: 35, md: 48 },
+                        height: { xs: 35, md: 48 },
                         mr: 2,
                         backgroundColor: theme.palette.primary.main,
+                        fontSize: { xs: '0.9rem', md: '1rem' },
                       }}
                     >
                       {testimonial.name.charAt(0)}
                     </Avatar>
                     <Box>
-                      <Typography variant="body2" sx={{ color: theme.palette.text.primary }}>
+                      <Typography sx={{
+                        color: theme.palette.text.primary,
+                        fontSize: { xs: '0.8rem', md: '1rem' },
+                        fontWeight: 600,
+                      }}>
                         {testimonial.name}
                       </Typography>
                     </Box>
@@ -99,7 +105,7 @@ const Testimonials: React.FC = () => {
                     variant="body2"
                     sx={{
                       lineHeight: 1.5,
-                      fontSize: '1rem',
+                      fontSize: { xs: '0.8rem', md: '1rem' },
                     }}
                   >
                     {testimonial.description}

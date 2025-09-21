@@ -36,7 +36,7 @@ const Benefits: React.FC = () => {
         transformOrigin: 'center'
       }} />,
       title: 'Controle de Proposta',
-      description: 'Cadastre propostas de forma rápida e organizada, com todos os dados do cliente e contrato em um só lugar.',
+      description: 'Registre propostas com agilidade e mantenha clientes e contratos centralizados em um único sistema.',
       backgroundColor: '#ecf6ff',
     },
     {
@@ -47,7 +47,7 @@ const Benefits: React.FC = () => {
         transformOrigin: 'center'
       }} />,
       title: 'Controle de entradas de parcelas',
-      description: 'Acompanhe parcelas recebidas e vencidas em tempo real, garantindo controle total do fluxo financeiro.',
+      description: 'Monitore pagamentos confirmados e em atraso de forma simples, assegurando uma gestão financeira completa e organizada.',
       backgroundColor: '#fff4e1',
     },
     {
@@ -58,7 +58,7 @@ const Benefits: React.FC = () => {
         transformOrigin: 'center'
       }} />,
       title: 'Geração de recibos de pagamentos',
-      description: 'Emita recibos de pagamento para sua equipe em apenas um clique, com histórico sempre disponível.',
+      description: 'Emita recibos facilmente e mantenha todo o histórico organizado e disponível.',
       backgroundColor: '#ecf6ff',
     },
   ];
@@ -73,12 +73,14 @@ const Benefits: React.FC = () => {
       }} />,
       title: 'Relatórios Detalhados',
       description: [
+        '• Dashboard analítico',
         '• Relatórios de parcelas não recebidas',
-        '• Relatórios detalhado de comissões e lucro',
+        '• Relatórios detalhados de comissões e lucros',
         '• Relatórios de base de clientes',
         '• Relatórios de vendedores / supervisores / gerentes'
       ],
-      backgroundColor: 'linear-gradient(90deg, #7143FF 0%, #7143FF 50%, #7143FF 50%, #7143FF 100%)',
+
+      backgroundColor: '#1f0073',
       textColor: 'white',
     },
     {
@@ -90,13 +92,16 @@ const Benefits: React.FC = () => {
           transformOrigin: 'center'
         }} />
       ),
-      title: 'Acesso online para o Produtor',
+      title: 'Outras funcionalidades',
       description: [
-        '• Acesso para visualizar lista de recibos, comissões e lucro',
-        '• Acesso para anexar Nota fiscal',
-        '• Acesso para visualizar base de clientes',
+        '• Acesso online para sua equipe visualizar recibos, produção e comissões',
+        '• Importação de propostas com IA',
+        '• Upload de arquivos (Drive)',
+        '• Anexar Nota fiscal',
+        '• Conta corrente individual',
+
       ],
-      backgroundColor: '#1f0073',
+      backgroundColor: 'linear-gradient(90deg, #7143FF 0%, #7143FF 50%, #7143FF 50%, #7143FF 100%)',
       textColor: 'white',
     },
   ];
@@ -104,17 +109,32 @@ const Benefits: React.FC = () => {
   return (
     <Box sx={{ py: { xs: 6, md: 8 }, backgroundColor: '#FFFFFF' }}>
       <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 6 }}>
+        <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}>
           <Typography
-            variant="h2"
+            variant="body2"
+            sx={{
+              color: theme => theme.palette.primary.main,
+              textTransform: 'uppercase',
+              letterSpacing: 2,
+              mb: 2,
+              fontWeight: 600,
+              fontSize: '0.875rem',
+            }}
+          >
+            Funcionalidades
+          </Typography>
+          <Typography
+            // variant="h2"
             sx={{
               color: '#1F2937',
               fontWeight: 700,
-              mb: 3,
-              fontSize: { xs: '2rem', md: '2.5rem' },
+              mb: { xs: 2, md: 3 },
+              textAlign: 'center',
+              // mb: 6,
+              fontSize: { xs: '1.6rem', md: '2rem' },
             }}
           >
-            Tudo que você precisa
+            Tudo que sua Corretora precisa
           </Typography>
         </Box>
 

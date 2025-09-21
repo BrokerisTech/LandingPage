@@ -56,7 +56,7 @@ const LandingPage: React.FC = () => {
             px: { xs: 5, md: 0 },
           }}
         >
-          <strong style={{ marginRight: 2 }}>Brokeris -</strong> mais de 20 anos conectando corretoras ao sucesso.
+          <strong style={{ marginRight: 2 }}>Brokeris -</strong> Há mais de 20 anos ajudando corretoras pelo Brasil.
         </Typography>
       </Box>
 

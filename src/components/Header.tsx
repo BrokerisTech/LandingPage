@@ -7,7 +7,11 @@ import {
   Box,
   useTheme,
   Container,
+  useMediaQuery,
 } from '@mui/material';
+import LocationCityIcon from '@mui/icons-material/LocationCity';
+
+
 
 import { Person as PersonIcon } from '@mui/icons-material';
 
@@ -20,6 +24,7 @@ const scrollToSection = (sectionId: string) => {
 
 const Header: React.FC = () => {
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.up('sm'));
 
   const navigationItems = [
     { label: 'Início', href: '#inicio' },
@@ -29,10 +34,10 @@ const Header: React.FC = () => {
   ];
 
   return (
-    <AppBar 
+    <AppBar
       position="sticky"
       elevation={0}
-      sx={{ 
+      sx={{
         backgroundColor: 'white',
         borderBottom: `1px solid ${theme.palette.divider}`,
         boxShadow: "0 0 10px 0 rgba(43, 91, 234, 0.363)",
@@ -56,8 +61,8 @@ const Header: React.FC = () => {
           />
 
           {/* Desktop Navigation */}
-          <Box 
-            sx={{ 
+          <Box
+            sx={{
               display: { xs: 'none', md: 'flex' },
               alignItems: 'center',
               gap: 1,
@@ -84,27 +89,41 @@ const Header: React.FC = () => {
 
           {/* Desktop Buttons */}
           <Box
-            sx={{ 
+            sx={{
               display: 'flex',
               alignItems: 'center',
               textAlign: "right",
               justifyContent: "flex-end",
+              gap: 1,
             }}
           >
             <Button
-              startIcon={<PersonIcon color="primary"/>}
-              onClick={() => window.open('https://www.brokeris.com.br/login', '_blank')}
-
+              startIcon={isMobile ? <PersonIcon color="primary" /> : null}
+              onClick={() => window.open('https://www.app.brokeris.com.br/login', '_blank')}
+              variant="outlined"
               sx={{
                 color: theme.palette.primary.main,
                 fontWeight: 600,
-                '&:hover': {
-                  color: theme.palette.primary.main,
-                  // backgroundColor: 'transparent',
-                },
+                fontSize: { xs: '0.8rem', md: '1rem' },
+                py: { xs: 1, md: 1.5 },
+                px: { xs: 1, md: 2 },
+
               }}
             >
-              Área da corretora
+              Área produtor
+            </Button>
+            <Button
+              startIcon={isMobile ? <LocationCityIcon /> : null}
+              onClick={() => window.open('https://www.app.brokeris.com.br/login', '_blank')}
+              variant="contained"
+              sx={{
+                fontWeight: 600,
+                fontSize: { xs: '0.8rem', md: '1rem' },
+                py: { xs: 1, md: 1.5 },
+                px: { xs: 1, md: 2 },
+              }}
+            >
+              Área corretora
             </Button>
 
             {/* <Button

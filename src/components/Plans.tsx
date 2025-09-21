@@ -39,8 +39,8 @@ const Plans: React.FC = () => {
   const detailedFeatures = [
     'Propostas/Contratos ilimitados',
     'Cadastro de produtores (Corretor/Supervisor/Gerente) ilimitado',
-    'Acesso online para o produtores acompanhar suas vendas, importações e recebimentos',
-    'Recibo para Corretor, supervisor e Gerente',
+    'Gerar pagamentos/recibos para Corretores, supervisores e Gerentes',
+    'Acesso online para os produtores acompanharem suas vendas e recibos',
     'Relatórios (PDF/EXCEL/DASHBOARD)',
     'Software 100% online',
   ]
@@ -57,7 +57,7 @@ const Plans: React.FC = () => {
     },
     {
       name: '1 Usuário',
-      description: 'Ideal para quem está sozinho no seu negócio',
+      description: 'Ideal para quem está começando o seu negócio',
       monthlyPrice: 200.0,
       featuresNew,
       detailedFeatures,
@@ -78,7 +78,7 @@ const Plans: React.FC = () => {
   return (
     <Box id="planos"
       sx={{
-        py: { xs: 6, md: 8 },
+        py: { xs: 4, md: 8 },
         background: theme => `linear-gradient(to bottom, #ffffff, ${alpha(theme.palette.primary.main, 0.16)}, #ffffff)`
       }}>
       <Container maxWidth="lg">
@@ -101,6 +101,7 @@ const Plans: React.FC = () => {
               color: theme.palette.text.primary,
               fontWeight: 700,
               mb: 3,
+              fontSize: { xs: '1.5rem', md: '2rem' },
             }}
           >
             Temos o plano perfeito para a sua empresa
@@ -108,139 +109,159 @@ const Plans: React.FC = () => {
         </Box>
 
         <Grid container spacing={3} >
-          {plans.map((plan, index) => (
-            <Grid size={{ xs: 12, md: 4 }} key={index}>
-              <Card
-                sx={{
-                  position: 'relative',
-                  border: plan.isPopular ? `2px solid ${theme.palette.primary.main}` : '1px solid #e9ecef',
-                  transition: 'all 0.3s ease-in-out',
-                  overflow: 'visible',
-                  scale: plan.isPopular ? 1.04 : 1,
-                  '&:hover': {
-                    transform: 'translateY(-4px)',
-                    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)',
-                  },
-                }}
-              >
-                {plan.isPopular && (
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      top: -10,
-                      left: '50%',
-                      transform: 'translateX(-50%)',
-                      backgroundColor: theme.palette.primary.main,
-                      color: 'white',
-                      px: 2,
-                      py: 0.5,
-                      borderRadius: 2,
-                      fontSize: '0.7rem',
-                      fontWeight: 600,
-                    }}
-                  >
-                    MAIS POPULAR
-                  </Box>
-                )}
-
-                <CardContent sx={{ p: 2.5 }}>
-                  {/* Plan Header */}
-                  <Box sx={{ textAlign: 'center', mb: 2 }}>
-                    <Typography
-                      variant="h6"
+          {plans.map((plan, index) => {
+            const isPersonalizado = plan.name === 'Personalizado';
+            return (
+              <Grid size={{ xs: 12, md: 4 }} key={index}>
+                <Card
+                  sx={{
+                    position: 'relative',
+                    border: plan.isPopular ? `2px solid ${theme.palette.primary.main}` : '1px solid #e9ecef',
+                    transition: 'all 0.3s ease-in-out',
+                    overflow: 'visible',
+                    scale: plan.isPopular ? 1.04 : 1,
+                    '&:hover': {
+                      transform: 'translateY(-4px)',
+                      boxShadow: '0 8px 25px rgba(0, 0, 0, 0.1)',
+                    },
+                  }}
+                >
+                  {plan.isPopular && (
+                    <Box
                       sx={{
-                        color: theme.palette.primary.main,
-                        fontWeight: 700,
-                        fontSize: { xs: '1.1rem', md: '1.2rem' },
-                        mb: 1,
+                        position: 'absolute',
+                        top: -10,
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        backgroundColor: theme.palette.primary.main,
+                        color: 'white',
+                        px: 2,
+                        py: 0.5,
+                        borderRadius: 2,
+                        fontSize: { xs: '0.6rem', md: '0.7rem' },
+                        fontWeight: 600,
                       }}
                     >
-                      {plan.name}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: theme.palette.text.secondary,
-                        mb: { xs: 1, md: 2 },
-                        fontSize: { xs: '0.8rem', md: '0.85rem' },
-                      }}
-                    >
-                      {plan.description}
-                    </Typography>
-                  </Box>
+                      MAIS POPULAR
+                    </Box>
+                  )}
 
-                  {/* Pricing */}
-                  <Box sx={{ textAlign: 'center', mb: { xs: 2, md: 4 } }}>
-                    <Box sx={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', mb: 1 }}>
+                  <CardContent sx={{ p: 2.5 }}>
+                    {/* Plan Header */}
+                    <Box sx={{ textAlign: 'center', mb: 2 }}>
                       <Typography
-                        variant="h4"
+                        variant="h6"
                         sx={{
-                          color: theme.palette.text.primary,
+                          color: theme.palette.primary.main,
                           fontWeight: 700,
-                          fontSize: { xs: '1.8rem', md: '2rem' },
+                          fontSize: { xs: '1.1rem', md: '1.2rem' },
+                          mb: 1,
                         }}
                       >
-                        R${plan.monthlyPrice}
+                        {plan.name}
                       </Typography>
                       <Typography
                         variant="body2"
-                        sx={{ color: theme.palette.text.secondary, ml: 1, }}
+                        sx={{
+                          color: theme.palette.text.secondary,
+                          mb: { xs: 1, md: 2 },
+                          fontSize: { xs: '0.8rem', md: '0.85rem' },
+                        }}
                       >
-                        /mês
+                        {plan.description}
                       </Typography>
                     </Box>
-                  </Box>
 
-                  {/* Key Features */}
-                  <Box sx={{ mb: 2 }}>
-                    <Typography variant="body2"
-                      sx={{
-                        color: theme.palette.text.secondary,
-                        fontWeight: 600,
-                        mb: 1,
-                        textAlign: 'center',
-                        display: plan.featuresNew.length > 0 ? 'block' : 'none',
-                        fontSize: { xs: '0.7rem', md: '0.8rem' },
-                      }}>
-                      NOVOS RECURSOS:
-                    </Typography>
+                    {/* Pricing */}
+                    <Box sx={{ textAlign: 'center', mb: { xs: 2, md: 4 } }}>
+                      {isPersonalizado && (
+                        <Typography
+                          variant="h4"
+                          sx={{
+                            // color: theme.palette.text.primary,
+                            fontWeight: 700,
+                            marginLeft: '-75px',
+                            marginBottom: '-2px',
+                            color: theme.palette.primary.main,
+                            fontSize: { xs: '0.4rem', md: '0.6rem' },
+                          }}
+                        >
+                          A partir de:
+                        </Typography>
+                      )}
+                      <Box sx={{ display: 'flex', alignItems: 'baseline', justifyContent: 'center', mb: 1 }}>
+                        <Typography
+                          variant="h4"
+                          sx={{
+                            color: theme.palette.text.primary,
+                            fontWeight: 700,
+                            fontSize: { xs: '1.8rem', md: '2rem' },
+                          }}
+                        >
+                          R${plan.monthlyPrice}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          sx={{ color: theme.palette.text.secondary, ml: 1, }}
+                        >
+                          /mês
+                        </Typography>
+                      </Box>
+                    </Box>
 
-                    {plan.featuresNew.map((feature, featureIndex) => (
+                    {/* Key Features */}
+                    <Box sx={{ mb: 2 }}>
+                      <Typography variant="body2"
+                        sx={{
+                          color: theme.palette.text.secondary,
+                          fontWeight: 600,
+                          mb: 1,
+                          textAlign: 'center',
+                          display: plan.featuresNew.length > 0 ? 'block' : 'none',
+                          fontSize: { xs: '0.7rem', md: '0.8rem' },
+                        }}>
+                        NOVOS RECURSOS:
+                      </Typography>
+
+                      {plan.featuresNew.map((feature, featureIndex) => (
+                        <CompItem title={feature} key={featureIndex} />
+                      ))}
+                    </Box>
+
+                    <Divider sx={{ my: 1 }} />
+
+                    <Box>
+                      <CompItem title={`Usuários: ${plan.users}`} isUsers />
+                    </Box>
+
+                    {plan.detailedFeatures.map((feature, featureIndex) => (
                       <CompItem title={feature} key={featureIndex} />
                     ))}
-                  </Box>
 
-                  <Divider sx={{ my: 1 }} />
+                    {/* CTA Button */}
+                    <Button
+                      variant="contained"
+                      onClick={() => window.open('https://www.app.brokeris.com.br/register', '_blank')}
+                      fullWidth
+                      sx={{
+                        backgroundColor: theme.palette.primary.main,
+                        py: { xs: 1, md: 1.2 },
+                        fontSize: '0.9rem',
+                        fontWeight: 600,
+                        mt: { xs: 2, md: 3 },
+                        '&:hover': {
+                          backgroundColor: theme.palette.primary.dark,
+                        },
+                      }}
+                    >
+                      Faça uma teste grátis
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Grid>
+            )
+          })}
 
-                  <Box>
-                    <CompItem title={`Usuários: ${plan.users}`} isUsers />
-                  </Box>
-
-                  {plan.detailedFeatures.map((feature, featureIndex) => (
-                    <CompItem title={feature} key={featureIndex} />
-                  ))}
-
-                  {/* CTA Button */}
-                  <Button
-                    variant="contained"
-                    fullWidth
-                    sx={{
-                      backgroundColor: theme.palette.primary.main,
-                      py: { xs: 1, md: 1.2 },
-                      fontSize: '0.9rem',
-                      fontWeight: 600,
-                      mt: { xs: 2, md: 3 },
-                      '&:hover': {
-                        backgroundColor: theme.palette.primary.dark,
-                      },
-                    }}
-                  >
-                    Faça uma teste grátis
-                  </Button>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
         </Grid>
       </Container>
     </Box>

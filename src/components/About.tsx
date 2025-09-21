@@ -34,7 +34,7 @@ const About: React.FC = () => {
     {
       icon: <TrendingUpIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
       title: 'Resultados',
-      description: 'Focamos em entregar resultados reais e mensuráveis para nossos clientes.',
+      description: 'Focamos em criar funcionalidades essenciais para melhores resultados dos nossos clientes.',
     },
     {
       icon: <GroupIcon sx={{ fontSize: 40, color: theme.palette.primary.main }} />,
@@ -56,8 +56,9 @@ const About: React.FC = () => {
                   color: theme.palette.primary.main,
                   textTransform: 'uppercase',
                   letterSpacing: 2,
-                  mb: 2,
+                  mb: { xs: 1, md: 2 },
                   fontWeight: 600,
+                  fontSize: { xs: '0.9rem', md: '1rem' },
                 }}
               >
                 SOBRE NÓS
@@ -67,11 +68,11 @@ const About: React.FC = () => {
                 sx={{
                   color: theme.palette.text.primary,
                   fontWeight: { xs: 600, md: 700 },
-                  mb: 3,
-                  fontSize: { xs: '1.8rem', md: '2.3rem' },
+                  mb: { xs: 2, md: 3 },
+                  fontSize: { xs: '1.4rem', md: '2.3rem' },
                 }}
               >
-                A revolução na gestão de corretoras de planos de saúde
+                A revolução na gestão de Corretoras de planos de saúde
               </Typography>
 
               <Typography
@@ -80,12 +81,12 @@ const About: React.FC = () => {
                   color: theme.palette.text.secondary,
                   mb: 3,
                   lineHeight: 1.6,
-                  fontSize: { xs: '0.9rem', md: '1.1rem' },
+                  fontSize: { xs: '0.88rem', md: '1.1rem' },
                 }}
               >
-                O Brokeris nasceu da necessidade de simplificar a rotina das corretoras.
-                Percebemos que muitas delas ainda perdem tempo com planilhas confusas,
-                controles manuais e processos que dificultam o crescimento. Por isso,
+                O Brokeris nasceu da necessidade de simplificar a rotina das corretoras,
+                percebemos que muitas delas ainda perdem tempo com planilhas confusas,
+                controles manuais e processos que dificultam o crescimento. Por tal motivo,
                 criamos uma solução simples, moderna e completa,
                 que reúne em um só lugar tudo o que você precisa: gestão de contratos, parcelas, comissões, relatórios e recibos.
               </Typography>
@@ -96,7 +97,7 @@ const About: React.FC = () => {
                   color: theme.palette.text.secondary,
                   mb: 3,
                   lineHeight: 1.6,
-                  fontSize: { xs: '1rem', md: '1.1rem' },
+                  fontSize: { xs: '0.88rem', md: '1.1rem' },
                 }}
               >
                 Nossa missão é garantir que qualquer corretora, independente do tamanho ou estrutura,
@@ -216,7 +217,7 @@ const About: React.FC = () => {
                     sx={{
                       fontWeight: 700,
                       mb: 0.5,
-                      fontSize: '1.8rem',
+                      fontSize: { xs: '1.4rem', md: '1.8rem' },
                     }}
                   >
                     20+ Anos
@@ -225,7 +226,7 @@ const About: React.FC = () => {
                     variant="body1"
                     sx={{
                       opacity: 0.9,
-                      fontSize: '0.9rem',
+                      fontSize: { xs: '0.88rem', md: '0.9rem' },
                     }}
                   >
                     de experiência no mercado

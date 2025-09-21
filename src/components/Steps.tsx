@@ -24,25 +24,25 @@ const Steps: React.FC = () => {
     {
       icon: AssignmentIcon,
       title: 'Criar proposta',
-      description: 'Crie propostas de forma rápida e organizada, com todos os dados do cliente e contrato em um só lugar.',
+      description: 'Crie propostas de forma rápida e organizada, com todos os dados do cliente em um só lugar.',
       color: '#1976d2',
     },
     {
       icon: RequestQuoteIcon,
-      title: 'Receber parcela',
+      title: 'Receber parcelas',
       description: 'Acompanhe parcelas recebidas e vencidas em tempo real, garantindo controle total do fluxo financeiro.',
       color: '#FF6B35',
     },
     {
       icon: DescriptionIcon,
       title: 'Gerar recibos',
-      description: 'Emita recibos de pagamento para sua equipe em apenas um clique, com histórico sempre disponível.',
+      description: 'Emita recibos de pagamentos para sua equipe em apenas um clique, com histórico sempre disponível.',
       color: '#2e7d32',
     },
     {
       icon: AnalyticsIcon,
-      title: 'Relatório detalhado',
-      description: 'Tenha relatórios completos sobre contratos, comissões e lucratividade para decisões mais inteligentes.',
+      title: 'Relatórios detalhados',
+      description: 'Visualize relatórios completos sobre contratos, comissões e lucratividade para decisões mais inteligentes.',
       color: '#1f0073',
     },
 
@@ -147,7 +147,7 @@ const Steps: React.FC = () => {
                   fontSize: { xs: '1rem', md: '1.1rem' },
                 }}
               >
-                Com esses quatro passos, você tem tudo que precisa para gerar um recibo de pagamentos automaticamente e ter total controle sobre suas vendas.
+                Com esses quatro passos, você tem tudo que precisa para gerar recibos de pagamentos automaticamente e ter total controle sobre suas vendas.
               </Typography>
             </motion.div>
           </Box>

@@ -24,7 +24,7 @@ const Services: React.FC = () => {
     },
     {
       title: 'Treinamento Especializado',
-      description: 'Suporte e capacitação para você aproveitar todo o sistema.',
+      description: 'Suporte e capacitação para aproveitar todo o sistema.',
     },
   ];
 
@@ -65,36 +65,22 @@ const Services: React.FC = () => {
                   backgroundColor: 'rgba(255, 255, 255, 0.1)',
                   backdropFilter: 'blur(10px)',
                   border: '1px solid rgba(255, 255, 255, 0.2)',
-                  borderRadius: 3,
-                  p: 3,
-                  mb: 3,
-                  height: '400px',
+                  borderRadius: 1,
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.125)',
+                  mb: { xs: 1, md: 3 },
                 }}
               >
-                <CardContent sx={{ p: 0 }}>
-                  {/* Content Blocks */}
-                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                    {[1, 2, 3].map((item) => (
-                      <Box
-                        key={item}
-                        sx={{
-                          height: 60,
-                          backgroundColor: 'rgba(131, 126, 126, 0.1)',
-                          borderRadius: 2,
-                          display: 'flex',
-                          alignItems: 'center',
-                          px: 2,
-                        }}
-                      >
-                        <Box sx={{ width: 40, height: 40, backgroundColor: 'rgba(255, 255, 255, 0.2)', borderRadius: 1, mr: 2 }} />
-                        <Box sx={{ flex: 1 }}>
-                          <Box sx={{ height: 8, backgroundColor: 'rgba(255, 255, 255, 0.3)', borderRadius: 1, mb: 1, width: '80%' }} />
-                          <Box sx={{ height: 6, backgroundColor: 'rgba(255, 255, 255, 0.2)', borderRadius: 1, width: '60%' }} />
-                        </Box>
-                      </Box>
-                    ))}
-                  </Box>
-                </CardContent>
+                <Box
+                  component="img"
+                  src="/assets/image.png"
+                  alt="Logo do sistema"
+                  sx={{
+                    cursor: 'pointer',
+                    width: { xs: '100%', md: '100%' },
+                    height: { xs: 'auto', md: '440px' },
+                    display: 'flex',
+                  }}
+                />
               </Card>
             </Box>
           </Grid>
@@ -118,8 +104,8 @@ const Services: React.FC = () => {
                       sx={{
                         color: theme.palette.text.primary,
                         fontWeight: 600,
-                        mb: 1.5,
-                        fontSize: '1.1rem',
+                        mb: { xs: 1, md: 1.5 },
+                        fontSize: { xs: '1rem', md: '1.1rem' },
                         textAlign: "left"
                       }}
                     >
@@ -131,7 +117,7 @@ const Services: React.FC = () => {
                       sx={{
                         color: theme.palette.text.secondary,
                         lineHeight: 1.5,
-                        fontSize: '0.9rem',
+                        fontSize: { xs: '0.8rem', md: '0.9rem' },
                         textAlign: "left"
                       }}
                     >
@@ -151,6 +137,7 @@ const Services: React.FC = () => {
               <Button
                 variant="contained"
                 size="large"
+                onClick={() => window.open('https://www.app.brokeris.com.br/register', '_blank')}
                 fullWidth
                 sx={{
                   px: { xs: 2, md: 4 },

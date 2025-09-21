@@ -10,10 +10,6 @@ import {
   useMediaQuery,
 } from '@mui/material';
 
-import {
-  PlayCircleOutline as PlayCircleOutlineIcon,
-} from '@mui/icons-material';
-
 
 const Hero: React.FC = () => {
   const theme = useTheme();
@@ -71,7 +67,8 @@ const Hero: React.FC = () => {
                   color: theme.palette.text.primary,
                 }}
               >
-                Organize comissões, simplifique pagamentos e tenha total visibilidade da lucratividade – <Box component={"strong"} sx={{ color: theme.palette.primary.main }}>
+                Organize comissões e pagamentos com total clareza sobre a lucratividade da sua corretora – <Box
+                  component={"strong"} sx={{ color: theme.palette.primary.main }}>
                   Tudo em um só sistema
                 </Box>
               </Typography>
@@ -87,7 +84,7 @@ const Hero: React.FC = () => {
                 }}
               >
                 Chega de planilhas confusas e processos manuais. Com o Brokeris,
-                sua corretora tem tudo em um só lugar: gestão de contratos, comissões e pagamentos, relatórios inteligentes e equipe conectada. Simples, moderno e feito para crescer
+                sua corretora tem tudo em um só lugar: Gestão de contratos, comissões, pagamentos, relatórios inteligentes e equipes conectadas tudo através do sistema. Simples, moderno e eficaz.
               </Typography>
 
               <Box sx={{
@@ -100,6 +97,7 @@ const Hero: React.FC = () => {
                 <Button
                   variant="contained"
                   size="large"
+                  onClick={() => window.open('https://www.app.brokeris.com.br/register', '_blank')}
                   sx={{
                     px: { xs: 2, md: 4 },
                     py: { xs: 1, md: 1.5 },
@@ -109,7 +107,7 @@ const Hero: React.FC = () => {
                   Iniciar teste grátis por 15 dias
                 </Button>
 
-                <Box sx={{
+                {/* <Box sx={{
                   display: 'flex',
                   alignItems: 'center',
                   gap: 0.8,
@@ -136,7 +134,7 @@ const Hero: React.FC = () => {
                   }}>
                     Veja como funciona a plataforma
                   </Typography>
-                </Box>
+                </Box> */}
               </Box>
             </Box>
           </Grid>
@@ -232,6 +230,7 @@ const Hero: React.FC = () => {
           <Button
             variant="contained"
             size="large"
+            onClick={() => window.open('https://www.app.brokeris.com.br/register', '_blank')}
             sx={{
               px: { xs: 2, md: 4 },
               py: { xs: 1, md: 1.5 },

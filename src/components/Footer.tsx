@@ -26,8 +26,8 @@ const Footer: React.FC = () => {
       { label: 'Sobre nós', href: '#sobrenos' },
     ],
     contact: [
-      { label: '21 98014-3451', href: '#' },
-      { label: 'marketing@brokeris.com.br', href: '#' },
+      { label: '21 98014-3451', href: 'https://wa.me/5521980143451' },
+      { label: 'marketing@brokeris.com.br', href: 'mailto:marketing@brokeris.com.br' },
     ],
   };
 
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
       sx={{
         backgroundColor: theme.palette.primary.dark,
         color: 'white',
-        py: { xs: 6, md: 8 },
+        py: { xs: 10, md: 8 },
       }}
     >
       <Container maxWidth="lg">
@@ -63,8 +63,9 @@ const Footer: React.FC = () => {
                   lineHeight: 1.6,
                 }}
               >
-                A plataforma de automação de conteúdo que revoluciona o marketing digital.
-                Crie, publique e analise conteúdo automaticamente com nossa IA especializada.
+                O sistema de gestão de comissões que revoluciona o mercado de planos de saúde.
+                Simplifique sua gestão, aumente a lucratividade e otimize seu tempo.
+
               </Typography>
             </Box>
           </Grid>
@@ -181,7 +182,7 @@ const Footer: React.FC = () => {
                 fontSize: '0.875rem',
               }}
             >
-              Desenvolvido pela equipe Brokeris ❤️
+              Desenvolvido pela Equipe Brokeris ❤️
             </Typography>
           </Box>
         </Box>
