@@ -155,7 +155,7 @@ const Hero: React.FC = () => {
               >
                 <Box
                   component="img"
-                  src="/assets/image.png"
+                  src="/assets/image.webp"
                   alt="Logo do sistema"
                   sx={{
                     cursor: 'pointer',
@@ -208,7 +208,7 @@ const Hero: React.FC = () => {
                 >
                   <Box
                     component="img"
-                    src="/assets/recibo.png"
+                    src="/assets/recibo.webp"
                     alt="Logo do sistema"
                     sx={{
                       cursor: 'pointer',

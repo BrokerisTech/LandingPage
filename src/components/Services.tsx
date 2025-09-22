@@ -72,7 +72,7 @@ const Services: React.FC = () => {
               >
                 <Box
                   component="img"
-                  src="/assets/image.png"
+                  src="/assets/image.webp"
                   alt="Logo do sistema"
                   sx={{
                     cursor: 'pointer',
