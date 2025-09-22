@@ -73,7 +73,8 @@ const Services: React.FC = () => {
                 <Box
                   component="img"
                   src="/assets/image.webp"
-                  alt="Logo do sistema"
+                  loading="lazy"
+                  alt="Imagem do sistema"
                   sx={{
                     cursor: 'pointer',
                     width: { xs: '100%', md: '100%' },

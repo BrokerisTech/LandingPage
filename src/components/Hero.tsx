@@ -7,13 +7,11 @@ import {
   Grid,
   Card,
   useTheme,
-  useMediaQuery,
 } from '@mui/material';
 
 
 const Hero: React.FC = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Box
@@ -58,7 +56,7 @@ const Hero: React.FC = () => {
                 ROTINA 100% AUTOMATIZADA
               </Typography>
               <Typography
-                variant={isMobile ? 'h3' : 'h2'}
+                variant='h1'
                 sx={{
                   fontWeight: 700,
                   fontSize: { xs: '1.2rem', lg: '2rem' },
@@ -74,7 +72,7 @@ const Hero: React.FC = () => {
               </Typography>
 
               <Typography
-                variant="body1"
+                variant="h2"
                 sx={{
                   mb: { xs: 1, md: 4 },
                   opacity: 0.9,
@@ -156,7 +154,8 @@ const Hero: React.FC = () => {
                 <Box
                   component="img"
                   src="/assets/image.webp"
-                  alt="Logo do sistema"
+                  alt="Imagem do sistema"
+                  loading="lazy"
                   sx={{
                     cursor: 'pointer',
                     width: { xs: '100%', md: '100%' },
@@ -209,7 +208,8 @@ const Hero: React.FC = () => {
                   <Box
                     component="img"
                     src="/assets/recibo.webp"
-                    alt="Logo do sistema"
+                    alt="Imagem do sistema"
+                    loading="lazy"
                     sx={{
                       cursor: 'pointer',
                       width: { xs: '110px', md: '100%' },
