@@ -1,4 +1,5 @@
 import { Box, CssBaseline, ThemeProvider } from '@mui/material';
+import { Analytics } from '@vercel/analytics/react';
 import theme from './theme';
 import LandingPage from './pages/LandingPage';
 
@@ -8,6 +9,7 @@ export function App() {
       <Box sx={{ minHeight: '100vh' }}>
         <CssBaseline />
         <LandingPage />
+        <Analytics />
       </Box>
     </ThemeProvider>
   );
