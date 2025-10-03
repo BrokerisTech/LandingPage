@@ -15,6 +15,8 @@ import {
 import {
   Check as CheckIcon,
 } from '@mui/icons-material';
+import { urlApi } from '../App';
+import axios from 'axios';
 
 const CompItem = ({ title, isUsers }: { title: string, isUsers?: boolean }) => {
   return (
@@ -241,7 +243,10 @@ const Plans: React.FC = () => {
                     {/* CTA Button */}
                     <Button
                       variant="contained"
-                      onClick={() => window.open('https://www.app.brokeris.com.br/register', '_blank')}
+                      onClick={() => {
+                        window.open('https://www.app.brokeris.com.br/register', '_blank')
+                        axios.post(urlApi, { url: "https://www.brokeris.com.br/register/?utm_source=landing-page-clique-plans" })
+                      }}
                       fullWidth
                       sx={{
                         backgroundColor: theme.palette.primary.main,
@@ -254,7 +259,7 @@ const Plans: React.FC = () => {
                         },
                       }}
                     >
-                      Faça uma teste grátis
+                      Faça um Teste Grátis
                     </Button>
                   </CardContent>
                 </Card>

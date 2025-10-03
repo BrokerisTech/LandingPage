@@ -9,6 +9,8 @@ import {
   useTheme,
   Button,
 } from '@mui/material';
+import axios from 'axios';
+import { urlApi } from '../App';
 
 const Services: React.FC = () => {
   const theme = useTheme();
@@ -138,7 +140,10 @@ const Services: React.FC = () => {
               <Button
                 variant="contained"
                 size="large"
-                onClick={() => window.open('https://www.app.brokeris.com.br/register', '_blank')}
+                onClick={() => {
+                  window.open('https://www.app.brokeris.com.br/register', '_blank')
+                  axios.post(urlApi, { url: "https://www.brokeris.com.br/register/?utm_source=landing-page-clique-services" })
+                }}
                 fullWidth
                 sx={{
                   px: { xs: 2, md: 4 },

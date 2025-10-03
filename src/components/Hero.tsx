@@ -8,6 +8,8 @@ import {
   Card,
   useTheme,
 } from '@mui/material';
+import axios from 'axios';
+import { urlApi } from '../App';
 
 
 const Hero: React.FC = () => {
@@ -95,7 +97,10 @@ const Hero: React.FC = () => {
                 <Button
                   variant="contained"
                   size="large"
-                  onClick={() => window.open('https://www.app.brokeris.com.br/register', '_blank')}
+                  onClick={() => {
+                    window.open('https://www.app.brokeris.com.br/register', '_blank')
+                    axios.post(urlApi, { url: "https://www.brokeris.com.br/register/?utm_source=landing-page-clique-hero" })
+                  }}
                   sx={{
                     px: { xs: 2, md: 4 },
                     py: { xs: 1, md: 1.5 },
@@ -230,7 +235,10 @@ const Hero: React.FC = () => {
           <Button
             variant="contained"
             size="large"
-            onClick={() => window.open('https://www.app.brokeris.com.br/register', '_blank')}
+            onClick={() => {
+              window.open('https://www.app.brokeris.com.br/register', '_blank')
+              axios.post(urlApi, { url: "https://www.brokeris.com.br/register/?utm_source=landing-page-clique-hero" })
+            }}
             sx={{
               px: { xs: 2, md: 4 },
               py: { xs: 1, md: 1.5 },
